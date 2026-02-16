@@ -20,6 +20,11 @@
   /* Accent: Neon Cyan */
   --color-accent: #06b6d4; 
   --color-accent-light: #22d3ee;
+  --color-accent-neon: #00f2ff;
+
+  /* Mobile UI Specific: Deep Charcoal */
+  --color-charcoal: #0a0a0a;
+  --color-charcoal-light: #171717;
 
   /* Secondary: Deep Purple */
   --color-secondary: #a855f7;
@@ -290,4 +295,19 @@ body {
   color: #f59e0b;
   fill: #f59e0b;
 }
+
+@layer utilities {
+  .bento-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: minmax(160px, auto);
+    gap: 1rem;
+  }
+
+  .glass-bottom-nav {
+    @apply fixed bottom-6 left-1/2 -translate-x-1/2 w-[90%] max-w-md h-16 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl z-50 flex items-center justify-around px-6;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+  }
+}
+
 
