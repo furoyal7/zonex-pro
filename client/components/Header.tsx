@@ -135,7 +135,7 @@ const Header: React.FC = () => {
             className="md:hidden overflow-hidden relative"
           >
             <div
-              className={`absolute inset-0 transition-opacity duration-500 bg-glass-bg backdrop-blur-md border-b border-glass-border shadow-glass ${
+              className={`absolute inset-0 transition-opacity duration-500 bg-glass-bg backdrop-blur-md shadow-glass ${
                 isScrolled ? "opacity-100" : "opacity-0"
               }`}
             />

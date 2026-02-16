@@ -27,7 +27,7 @@ const socialLinks = [
 const Footer: React.FC = () => {
   return (
     <footer
-      className="border-t mt-20"
+      className="mt-20"
       style={{
         background: "var(--color-surface)",
         borderColor: "var(--color-border)",
@@ -184,7 +184,7 @@ const Footer: React.FC = () => {
 
         {/* Bottom bar */}
         <div
-          className="border-t mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
+          className="mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
           style={{ borderColor: "var(--color-border-light)" }}
         >
           <p

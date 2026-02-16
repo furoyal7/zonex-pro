@@ -25,7 +25,7 @@ export default function AISolutionPage() {
   return (
     <div className="flex flex-col">
       {/* ── Navigation ────────────────────────── */}
-      <nav className="pt-24 pb-6 border-b border-border bg-background/50 backdrop-blur-md sticky top-0 z-20">
+      <nav className="pt-24 pb-6 bg-background/50 backdrop-blur-md sticky top-0 z-20">
         <div className="container-custom flex items-center justify-between">
           <Link href="/solutions" className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-primary transition-colors">
             <ArrowLeft size={16} />
@@ -137,7 +137,7 @@ export default function AISolutionPage() {
       </section>
 
       {/* ── CTA ────────────────────────────────── */}
-      <section id="get-started" className="py-20 md:py-32 bg-background border-t border-border">
+      <section id="get-started" className="py-20 md:py-32 bg-background">
         <div className="container-custom text-center">
           <h2 className="heading-section mb-8">Deploy Your Competitive Advantage Today</h2>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">

@@ -89,7 +89,7 @@ export default function ContactPage() {
               <div className="glass-card p-8 md:p-12 relative overflow-hidden min-h-[500px] flex flex-col">
                 
                 {/* Progress Bar */}
-                <div className="absolute top-0 left-0 w-full h-1 bg-border/30">
+                <div className="absolute top-0 left-0 w-full h-1">
                    <motion.div 
                      className="h-full bg-primary"
                      initial={{ width: "33%" }}

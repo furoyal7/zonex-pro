@@ -80,7 +80,7 @@ export const Logo: React.FC<{
           ZONEX
         </span>
         <div className="flex items-center justify-between w-full">
-            <div className="h-[2px] w-full bg-gradient-to-r from-cyan-500 to-purple-500 rounded-full opacity-50 mr-1"></div>
+            <div className="flex-grow"></div>
             <span className="text-[10px] font-bold tracking-[0.2em] text-cyan-500">PRO</span>
         </div>
       </div>

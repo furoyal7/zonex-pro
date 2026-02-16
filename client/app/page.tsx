@@ -204,9 +204,10 @@ export default function HomePage() {
               </div>
 
               <h1 className="heading-hero mb-6 text-text-primary">
-                Digital Tools for <br />
-                <span className="text-primary dark:text-accent-light drop-shadow-[0_0_15px_rgba(99,102,241,0.2)]">
-                  Real-World Success
+                <span className="inline-block whitespace-nowrap">Tech Solutions,</span> <br />
+                <span className="inline-block whitespace-nowrap">Real Business</span> <br />
+                <span className="text-primary dark:text-accent-light drop-shadow-[0_0_15px_rgba(99,102,241,0.2)] inline-block whitespace-nowrap">
+                  Impact
                 </span>
               </h1>
 
@@ -268,7 +269,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════
           2. TRUSTED BY — Logo Strip (Neon Style)
           ═══════════════════════════════════════════ */}
-      <section className="py-12 border-y border-border bg-background/50 backdrop-blur-sm">
+      <section className="py-12 bg-background/50 backdrop-blur-sm">
         <div className="container-custom">
           <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-8 text-text-muted">
             Trusted by Industry Leaders
@@ -449,7 +450,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════
           6. STATS (Updated)
           ═══════════════════════════════════════════ */}
-      <section className="py-20 border-y border-border bg-background relative overflow-hidden">
+      <section className="py-20 bg-background relative overflow-hidden">
         {/* Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
         

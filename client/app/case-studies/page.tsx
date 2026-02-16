@@ -52,7 +52,7 @@ const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, delay, ease: "easeOut" },
+  transition: { duration: 0.5, delay, ease: "easeOut" as any },
 });
 
 export default function CaseStudiesPage() {
@@ -138,7 +138,7 @@ export default function CaseStudiesPage() {
       </section>
 
        {/* ── Final CTA ──────────────────────────── */}
-       <section className="py-16 md:py-24 border-t border-border">
+       <section className="py-16 md:py-24">
           <div className="container-custom text-center">
              <h2 className="heading-section mb-8">Want to become our next success story?</h2>
              <Link href="/contact">

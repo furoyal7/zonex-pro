@@ -24,7 +24,7 @@ const fadeUp = (delay: number = 0) => ({
 export default function SecuritySolutionPage() {
   return (
     <div className="flex flex-col">
-      <nav className="pt-24 pb-6 border-b border-border bg-background/50 backdrop-blur-md sticky top-0 z-20">
+      <nav className="pt-24 pb-6 bg-background/50 backdrop-blur-md sticky top-0 z-20">
         <div className="container-custom flex items-center justify-between">
           <Link href="/solutions" className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-primary transition-colors">
             <ArrowLeft size={16} />
