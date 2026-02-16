@@ -89,7 +89,7 @@ export default function ResourceHubPage() {
                  key={cat} 
                  {...fadeUp(0.1 + i * 0.05)}
                  className={`px-6 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
-                   i === 0 ? "bg-primary text-white" : "bg-surface border border-border hover:border-primary/50"
+                   i === 0 ? "bg-primary text-white" : "bg-surface border border-border text-text-primary hover:border-primary/50"
                  }`}
                >
                  {cat}
@@ -112,9 +112,9 @@ export default function ResourceHubPage() {
                   className="bg-surface rounded-3xl border border-border overflow-hidden group hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl"
                 >
                   <div className={`aspect-video ${res.image} flex items-center justify-center relative overflow-hidden`}>
-                    <Icon size={48} className="text-primary opacity-30 group-hover:scale-110 transition-transform duration-500" />
+                    <Icon size={48} className="text-primary opacity-50 group-hover:scale-110 transition-transform duration-500" />
                     <div className="absolute top-4 left-4">
-                       <span className="px-3 py-1 bg-white dark:bg-slate-900 rounded-full text-[10px] font-bold uppercase tracking-wider shadow-sm">
+                       <span className="px-3 py-1 bg-surface-elevated border border-border/50 rounded-full text-[10px] font-bold text-text-primary uppercase tracking-wider shadow-sm">
                          {res.type}
                        </span>
                     </div>

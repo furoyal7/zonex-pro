@@ -5,88 +5,98 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  /* FUTURISTIC NEON PALETTE - Base colors */
-  --color-primary: #6366f1;
-  --color-primary-light: #818cf8;
-  --color-primary-dark: #4f46e5;
-  --color-primary-50: #f8fafc;
-  --color-primary-100: #eef2ff;
-  --color-primary-200: #e0e7ff;
-  --color-primary-500: #6366f1;
-  --color-primary-600: #4f46e5;
-  --color-primary-700: #4338ca;
-  --color-primary-900: #312e81;
+  /* RAW COLOR VALUES - Professional Light */
+  --bg-main: #f5f7fa;
+  --bg-surface: #ffffff;
+  --bg-surface-elevated: #edf2f7;
+  --txt-primary: #1a202c;
+  --txt-secondary: #4a5568; 
+  --txt-muted: #718096;
+  --brd-main: #e2e8f0;
+  --brd-light: #f1f5f9;
 
-  /* Accent: Neon Cyan */
-  --color-accent: #06b6d4; 
-  --color-accent-light: #22d3ee;
-  --color-accent-neon: #00f2ff;
+  /* Neon Accents - Light Mode Variants */
+  --neon-cyan: #0891b2;
+  --neon-indigo: #4f46e5;
+  --neon-purple: #7c3aed;
+  --neon-emerald: #059669;
+  --neon-amber: #d97706;
 
-  /* Mobile UI Specific: Deep Charcoal */
-  --color-charcoal: #0a0a0a;
-  --color-charcoal-light: #171717;
+  --primary-50: #f8fafc;
+  --primary-100: #eef2ff;
 
-  /* Secondary: Deep Purple */
-  --color-secondary: #a855f7;
-  --color-secondary-light: #c084fc;
-
-  /* PROFESSIONAL LIGHT THEME (WCAG Compliant) */
-  --color-background: #f5f7fa; /* Soft Neutral Background */
-  --color-surface: #ffffff;
-  --color-surface-elevated: #edf2f7;
-  --color-text-primary: #1a202c; /* High-contrast Deep Indigo-Charcoal */
-  --color-text-secondary: #4a5568; 
-  --color-text-muted: #718096;
-  --color-border: #e2e8f0;
-  --color-border-light: #f1f5f9;
-  
+  /* Glass Effects */
   --glass-bg: rgba(255, 255, 255, 0.9);
   --glass-border: rgba(0, 0, 0, 0.08);
   --glass-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
 
-  /* Neon/Highlight colors for light mode (Higher saturation, lower brightness) */
-  --color-neon-cyan: #0891b2;
-  --color-neon-indigo: #4f46e5;
-  --color-neon-purple: #7c3aed;
-  --color-neon-emerald: #059669;
-  --color-neon-amber: #d97706;
-
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
-  --shadow-lg: 0 10px 30px -3px rgba(0, 0, 0, 0.06);
-  --shadow-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
-
-  --radius-md: 10px;
-  --radius-lg: 16px;
-  --radius-xl: 24px;
-  --radius-full: 9999px;
+  /* Utils */
+  --shd-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shd-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shd-lg: 0 10px 30px -3px rgba(0, 0, 0, 0.06);
+  --shd-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
+  --rad-md: 10px;
+  --rad-lg: 16px;
+  --rad-xl: 24px;
 }
 
 [data-theme='dark'], .dark {
-  --color-background: #020617; /* Slate 950 */
-  --color-surface: #0f172a; /* Slate 900 */
-  --color-surface-elevated: #1e293b; /* Slate 800 */
-  --color-text-primary: #f8fafc;
-  --color-text-secondary: #94a3b8; /* Slate 400 */
-  --color-text-muted: #64748b;
-  --color-border: #1e293b;
-  --color-border-light: #334155;
-  
+  /* RAW COLOR VALUES - Dark Mode */
+  --bg-main: #020617;
+  --bg-surface: #0f172a;
+  --bg-surface-elevated: #1e293b;
+  --txt-primary: #f8fafc;
+  --txt-secondary: #94a3b8;
+  --txt-muted: #64748b;
+  --brd-main: #1e293b;
+  --brd-light: #334155;
+
+  /* Neon Accents - Dark Mode Variants */
+  --neon-cyan: #22d3ee;
+  --neon-indigo: #818cf8;
+  --neon-purple: #c084fc;
+  --neon-emerald: #34d399;
+  --neon-amber: #fbbf24;
+
+  /* Glass Effects */
   --glass-bg: rgba(2, 6, 23, 0.8);
   --glass-border: rgba(99, 102, 241, 0.2);
   --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+
+  --shd-lg: 0 0 25px rgba(99, 102, 241, 0.2);
+  --shd-xl: 0 0 50px rgba(6, 182, 212, 0.2);
+}
+
+@theme {
+  --color-primary: #6366f1;
+  --color-accent: #06b6d4;
   
-  --shadow-lg: 0 0 25px rgba(99, 102, 241, 0.2);
-  --shadow-xl: 0 0 50px rgba(6, 182, 212, 0.2);
+  --color-background: var(--bg-main);
+  --color-surface: var(--bg-surface);
+  --color-surface-elevated: var(--bg-surface-elevated);
+  --color-text-primary: var(--txt-primary);
+  --color-text-secondary: var(--txt-secondary);
+  --color-text-muted: var(--txt-muted);
+  --color-border: var(--brd-main);
+  --color-border-light: var(--brd-light);
 
-  --color-primary-50: #0f172a;
+  --color-neon-cyan: var(--neon-cyan);
+  --color-neon-indigo: var(--neon-indigo);
+  --color-neon-purple: var(--neon-purple);
+  --color-neon-emerald: var(--neon-emerald);
+  --color-neon-amber: var(--neon-amber);
 
-  /* Vibrant neon colors for dark mode */
-  --color-neon-cyan: #22d3ee;
-  --color-neon-indigo: #818cf8;
-  --color-neon-purple: #c084fc;
-  --color-neon-emerald: #34d399;
-  --color-neon-amber: #fbbf24;
+  --color-primary-50: var(--primary-50);
+  --color-primary-100: var(--primary-100);
+
+  --shadow-sm: var(--shd-sm);
+  --shadow-md: var(--shd-md);
+  --shadow-lg: var(--shd-lg);
+  --shadow-xl: var(--shd-xl);
+
+  --radius-md: var(--rad-md);
+  --radius-lg: var(--rad-lg);
+  --radius-xl: var(--rad-xl);
 }
 
 
