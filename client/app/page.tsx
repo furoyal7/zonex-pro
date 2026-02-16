@@ -205,7 +205,7 @@ export default function HomePage() {
 
               <h1 className="heading-hero mb-6 text-white">
                 Architecting the <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-accent via-primary to-secondary animate-gradient-x">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 animate-gradient-x drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
                   Digital Future
                 </span>
               </h1>
@@ -348,7 +348,7 @@ export default function HomePage() {
               </span>
               <h2 className="heading-section mb-6">
                 Innovation Without <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">Compromise</span>
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-400">Compromise</span>
               </h2>
               <p className="body-lg mb-8 text-slate-400">
                 We bridge the gap between visionary concepts and production-ready code. 
@@ -485,7 +485,7 @@ export default function HomePage() {
                <div className="relative z-10 py-16">
                   <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-white tracking-tight leading-tight">
                     Ready to Build the <br />
-                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-indigo-500">Impossible?</span>
+                    <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-400">Impossible?</span>
                   </h2>
                   <p className="text-slate-400 text-lg max-w-xl mx-auto mb-12">
                     Let&apos;s discuss how ZONEX-PRO can engineer your next breakthrough. 
