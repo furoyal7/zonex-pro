@@ -25,8 +25,10 @@ export const BentoItem = ({
       viewport={{ once: true }}
       transition={{ duration: 0.5, delay }}
       className={`
-        relative overflow-hidden rounded-3xl border border-border 
-        bg-surface-elevated backdrop-blur-md p-6 flex flex-col justify-between
+        relative overflow-hidden rounded-3xl border border-border/80 
+        bg-surface-elevated p-6 flex flex-col justify-between
+        shadow-[0_4px_20px_-1px_rgba(0,0,0,0.05)] dark:shadow-none
+        hover:shadow-lg transition-all duration-300
         ${colSpan === 2 ? "col-span-2" : "col-span-1"}
         ${rowSpan === 2 ? "row-span-2" : "row-span-1"}
         ${className}

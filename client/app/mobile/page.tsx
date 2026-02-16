@@ -16,12 +16,12 @@ export default function MobilePage() {
           animate={{ opacity: 1, x: 0 }}
           transition={{ duration: 0.8 }}
         >
-          <span className="inline-block px-3 py-1 rounded-full border border-cyan-500/20 bg-cyan-500/5 text-cyan-400 text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
+          <span className="inline-block px-3 py-1 rounded-full border border-accent/20 bg-accent/5 text-accent text-[10px] font-bold tracking-[0.2em] uppercase mb-4">
             Next-Gen Infrastructure
           </span>
           <h1 className="text-5xl font-bold tracking-tight leading-[1.1] text-text-primary">
             Future of <br />
-            <span className="text-cyan-400">Tech is Here.</span>
+            <span className="text-accent">Tech is Here.</span>
           </h1>
         </motion.div>
 
@@ -39,7 +39,7 @@ export default function MobilePage() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.4 }}
         >
-          <Button size="lg" className="bg-cyan-500 text-black hover:bg-cyan-400 rounded-full px-8 py-6 text-lg font-bold">
+          <Button size="lg" className="bg-accent text-black hover:bg-accent-light rounded-full px-8 py-6 text-lg font-bold shadow-xl shadow-accent/20">
             Get Started
           </Button>
         </motion.div>
@@ -49,15 +49,15 @@ export default function MobilePage() {
       <section className="flex flex-col gap-6">
         <div className="flex justify-between items-end">
           <h2 className="text-2xl font-bold text-text-primary">Solutions</h2>
-          <span className="text-cyan-400 text-sm font-medium">View all</span>
+          <span className="text-accent text-sm font-medium">View all</span>
         </div>
 
         <BentoGrid>
           <BentoItem colSpan={2} className="h-64" delay={0.1}>
             <div className="flex flex-col h-full justify-between">
               <div className="flex justify-between items-start">
-                <div className="p-3 bg-cyan-500/10 rounded-2xl">
-                  <Cpu className="text-cyan-400" size={32} />
+                <div className="p-3 bg-accent/10 rounded-2xl">
+                  <Cpu className="text-accent" size={32} />
                 </div>
                 <ArrowUpRight className="text-text-muted/20" size={24} />
               </div>
@@ -69,16 +69,16 @@ export default function MobilePage() {
           </BentoItem>
 
           <BentoItem delay={0.2}>
-            <div className="p-2 bg-indigo-500/10 rounded-xl mb-4 w-fit">
-              <Shield className="text-indigo-400" size={24} />
+            <div className="p-2 bg-neon-indigo/10 rounded-xl mb-4 w-fit">
+              <Shield className="text-neon-indigo" size={24} />
             </div>
             <h3 className="text-lg font-bold text-text-primary mb-1">Security</h3>
             <p className="text-text-muted text-xs">Military-grade protection.</p>
           </BentoItem>
 
           <BentoItem delay={0.3}>
-            <div className="p-2 bg-purple-500/10 rounded-xl mb-4 w-fit">
-              <Zap className="text-purple-400" size={24} />
+            <div className="p-2 bg-neon-purple/10 rounded-xl mb-4 w-fit">
+              <Zap className="text-neon-purple" size={24} />
             </div>
             <h3 className="text-lg font-bold text-text-primary mb-1">Scale</h3>
             <p className="text-text-muted text-xs">Elastic infrastructure.</p>
@@ -91,23 +91,23 @@ export default function MobilePage() {
                    <p className="text-text-muted text-sm">AI-driven dashboards for real-time insights.</p>
                 </div>
                 <div className="relative w-24 h-24">
-                   <div className="absolute inset-0 bg-cyan-500/20 blur-xl rounded-full animate-pulse" />
-                   <BarChart3 className="relative z-10 text-cyan-400 w-full h-full p-4" />
+                   <div className="absolute inset-0 bg-accent/20 blur-xl rounded-full animate-pulse" />
+                   <BarChart3 className="relative z-10 text-accent w-full h-full p-4" />
                 </div>
              </div>
           </BentoItem>
 
           <BentoItem delay={0.5}>
-            <div className="p-2 bg-emerald-500/10 rounded-xl mb-4 w-fit">
-              <Globe className="text-emerald-400" size={24} />
+            <div className="p-2 bg-neon-emerald/10 rounded-xl mb-4 w-fit">
+              <Globe className="text-neon-emerald" size={24} />
             </div>
             <h3 className="text-lg font-bold text-text-primary mb-1">Network</h3>
             <p className="text-text-muted text-xs">200+ Edge locations.</p>
           </BentoItem>
 
           <BentoItem delay={0.6}>
-            <div className="p-2 bg-amber-500/10 rounded-xl mb-4 w-fit">
-              <Layers className="text-amber-400" size={24} />
+            <div className="p-2 bg-neon-amber/10 rounded-xl mb-4 w-fit">
+              <Layers className="text-neon-amber" size={24} />
             </div>
             <h3 className="text-lg font-bold text-text-primary mb-1">AI Gen</h3>
             <p className="text-text-muted text-xs">Custom ML models.</p>
