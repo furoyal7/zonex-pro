@@ -17,14 +17,14 @@ export const BottomNav = () => {
   const pathname = usePathname();
 
   return (
-    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md h-16 rounded-full border border-white/10 bg-black/40 backdrop-blur-xl z-50 flex items-center justify-around px-2 shadow-2xl">
+    <div className="fixed bottom-6 left-1/2 -translate-x-1/2 w-[92%] max-w-md h-16 rounded-full border border-border bg-surface-elevated/80 backdrop-blur-xl z-50 flex items-center justify-around px-2 shadow-2xl transition-colors duration-300">
       {navItems.map((item) => {
         const isActive = pathname === item.href;
         return (
           <Link key={item.label} href={item.href} className="relative p-3">
             <item.icon 
               size={24} 
-              className={`transition-colors duration-300 ${isActive ? "text-cyan-400" : "text-white/60"}`} 
+              className={`transition-colors duration-300 ${isActive ? "text-cyan-400" : "text-text-muted hover:text-text-primary"}`} 
             />
             {isActive && (
               <motion.div
