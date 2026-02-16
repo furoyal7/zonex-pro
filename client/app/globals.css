@@ -149,16 +149,16 @@ body {
   }
 
   .section-padding {
-    @apply py-20 md:py-28 lg:py-32;
+    @apply py-16 md:py-24 lg:py-32;
   }
 
   .heading-hero {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.08];
+    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1];
     font-family: var(--font-outfit), 'Outfit', sans-serif;
   }
 
   .heading-section {
-    @apply text-3xl sm:text-4xl md:text-[2.5rem] font-bold tracking-tight leading-tight;
+    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight;
     font-family: var(--font-outfit), 'Outfit', sans-serif;
   }
 

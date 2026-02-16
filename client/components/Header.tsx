@@ -110,12 +110,12 @@ const Header: React.FC = () => {
 
         {/* Mobile Menu Toggle */}
         <button
-          className="md:hidden p-1.5 rounded-md transition-colors hover:bg-gray-100 dark:hover:bg-white/5"
-          style={{ color: "var(--text-secondary)" }}
+          className="md:hidden p-3 rounded-full transition-colors hover:bg-white/5 active:bg-white/10"
+          style={{ color: "var(--text-primary)" }}
           onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
           aria-label="Toggle menu"
         >
-          {isMobileMenuOpen ? <X size={18} /> : <Menu size={18} />}
+          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
       </div>
 
@@ -127,43 +127,47 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="md:hidden overflow-hidden"
+            className="md:hidden overflow-hidden bg-slate-950/90 backdrop-blur-xl border-t border-white/10"
           >
-            <div
-              className="px-5 pb-4 pt-3 border-t"
-              style={{
-                background: "var(--glass-bg)",
-                backdropFilter: "blur(20px)",
-                borderColor: "var(--border-light)",
-              }}
-            >
-              <div className="flex flex-col gap-1">
-                {navLinks.map((link) => {
+            <div className="px-5 py-6 flex flex-col gap-4">
+              <nav className="flex flex-col gap-2">
+                {navLinks.map((link, i) => {
                   const isActive = pathname === link.href;
                   return (
-                    <Link
+                    <motion.div
+                      initial={{ opacity: 0, x: -20 }}
+                      animate={{ opacity: 1, x: 0 }}
+                      transition={{ delay: i * 0.05 + 0.1 }}
                       key={link.name}
-                      href={link.href}
-                      className={`px-3 py-2 rounded-lg text-sm font-medium transition-all ${
-                        isActive
-                          ? "text-indigo-600 bg-indigo-50 dark:bg-indigo-500/10"
-                          : "hover:bg-gray-50 dark:hover:bg-white/5"
-                      }`}
-                      style={{ color: isActive ? undefined : "var(--text-secondary)" }}
-                      onClick={() => setIsMobileMenuOpen(false)}
                     >
-                      {link.name}
-                    </Link>
+                      <Link
+                        href={link.href}
+                        className={`block px-4 py-3 rounded-xl text-lg font-medium transition-all ${
+                          isActive
+                            ? "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
+                            : "text-slate-300 hover:bg-white/5 hover:text-white"
+                        }`}
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {link.name}
+                      </Link>
+                    </motion.div>
                   );
                 })}
-              </div>
-              <div className="mt-3 px-3">
+              </nav>
+              
+              <motion.div 
+                initial={{ opacity: 0, y: 20 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ delay: 0.3 }}
+                className="mt-2"
+              >
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
-                  <Button variant="primary" className="w-full">
-                    Get Started
+                  <Button variant="primary" className="w-full py-4 text-lg shadow-lg shadow-indigo-500/20">
+                    Get Started ->
                   </Button>
                 </Link>
-              </div>
+              </motion.div>
             </div>
           </motion.div>
         )}

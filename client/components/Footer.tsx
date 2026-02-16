@@ -75,7 +75,7 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-500/10"
+                  className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-500/10"
                   style={{
                     color: "var(--text-muted)",
                     background: "var(--surface-elevated)",

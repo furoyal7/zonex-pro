@@ -184,15 +184,16 @@ export default function HomePage() {
         <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] mix-blend-screen animate-pulse" />
         <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-pulse" style={{ animationDelay: "2s" }} />
 
-        <div className="container-custom relative z-10 py-24 md:py-32">
+        <div className="container-custom relative z-10 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
             {/* Left — Content */}
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, ease: "easeOut" }}
+              className="text-center lg:text-left"
             >
-              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md mb-8">
+              <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full border border-accent/20 bg-accent/5 backdrop-blur-md mb-8 mx-auto lg:mx-0">
                 <span className="relative flex h-2 w-2">
                   <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75" />
                   <span className="relative inline-flex rounded-full h-2 w-2 bg-accent" />
@@ -209,20 +210,20 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              <p className="body-lg max-w-lg mb-10 text-slate-300">
+              <p className="body-lg max-w-lg mb-10 text-slate-300 mx-auto lg:mx-0">
                 ZONEX-PRO delivers high-performance software solutions and AI-driven
                 innovations. We build the systems that power tomorrow&apos;s enterprises.
               </p>
 
-              <div className="flex flex-col sm:flex-row items-start gap-4">
-                <Link href="/contact">
-                  <Button size="lg" variant="primary" className="shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] transition-shadow duration-300">
+              <div className="flex flex-col sm:flex-row items-center lg:items-start justify-center lg:justify-start gap-4">
+                <Link href="/contact" className="w-full sm:w-auto">
+                  <Button size="lg" variant="primary" className="w-full sm:w-auto shadow-[0_0_20px_rgba(99,102,241,0.5)] hover:shadow-[0_0_30px_rgba(99,102,241,0.7)] transition-shadow duration-300">
                     START PROJECT
                     <ArrowRight size={18} />
                   </Button>
                 </Link>
-                <Link href="/projects">
-                  <Button size="lg" variant="ghost" className="border border-slate-700 hover:bg-slate-800 text-white">
+                <Link href="/projects" className="w-full sm:w-auto">
+                  <Button size="lg" variant="ghost" className="w-full sm:w-auto border border-slate-700 hover:bg-slate-800 text-white">
                     VIEW WORK
                     <ArrowRight size={16} />
                   </Button>
