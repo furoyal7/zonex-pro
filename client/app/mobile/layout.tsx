@@ -7,7 +7,7 @@ export default function MobileLayout({
   children: React.ReactNode;
 }) {
   return (
-    <div className="min-h-screen bg-background text-text-primary selection:bg-cyan-500/30 transition-colors duration-300">
+    <div className="min-h-screen bg-background text-text-primary selection:bg-primary-100 transition-colors duration-300">
       <main className="pb-32">
         {children}
       </main>

@@ -135,7 +135,7 @@ const Header: React.FC = () => {
             className="md:hidden overflow-hidden relative"
           >
             <div
-              className={`absolute inset-0 transition-opacity duration-500 bg-glass-bg backdrop-blur-md shadow-glass ${
+              className={`absolute inset-0 transition-opacity duration-500 bg-surface/90 backdrop-blur-md shadow-glass ${
                 isScrolled ? "opacity-100" : "opacity-0"
               }`}
             />
@@ -154,8 +154,8 @@ const Header: React.FC = () => {
                         href={link.href}
                         className={`block px-4 py-3 rounded-xl text-lg font-medium transition-all ${
                           isActive
-                            ? "bg-indigo-500/10 text-indigo-400 border border-indigo-500/20"
-                            : "text-slate-300 hover:bg-white/5 hover:text-white"
+                            ? "bg-primary/10 text-primary border border-primary/20"
+                            : "text-text-secondary hover:bg-surface-elevated hover:text-text-primary"
                         }`}
                         onClick={() => setIsMobileMenuOpen(false)}
                       >

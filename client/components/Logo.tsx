@@ -81,7 +81,7 @@ export const Logo: React.FC<{
         </span>
         <div className="flex items-center justify-between w-full">
             <div className="flex-grow"></div>
-            <span className="text-[10px] font-bold tracking-[0.2em] text-cyan-500">PRO</span>
+            <span className="text-[10px] font-bold tracking-[0.2em] text-primary dark:text-accent">PRO</span>
         </div>
       </div>
     </div>

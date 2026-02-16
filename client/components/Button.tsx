@@ -23,13 +23,13 @@ const Button: React.FC<ButtonProps> = ({
 
   const variants: Record<string, string> = {
     primary:
-      "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-md shadow-primary-500/20 hover:shadow-lg hover:shadow-primary-500/30 rounded-full",
+      "bg-primary text-white shadow-md hover:shadow-lg dark:shadow-primary-500/20 dark:hover:shadow-primary-500/30 rounded-full",
     secondary:
-      "bg-surface text-primary shadow-sm hover:shadow-md border border-border rounded-full",
+      "bg-surface-elevated text-text-primary shadow-sm hover:shadow-md border border-border rounded-full",
     outline:
-      "border-2 border-primary text-primary hover:bg-primary-50 rounded-full",
+      "border-2 border-primary text-primary hover:bg-primary/5 rounded-full",
     ghost:
-      "text-text-secondary hover:text-primary hover:bg-primary-50 rounded-xl",
+      "text-text-secondary hover:text-primary hover:bg-background rounded-xl",
   };
 
   const sizes: Record<string, string> = {
