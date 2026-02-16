@@ -205,7 +205,7 @@ export default function HomePage() {
 
               <h1 className="heading-hero mb-6 text-white">
                 Architecting the <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 via-white to-purple-300 animate-gradient-x drop-shadow-[0_0_15px_rgba(34,211,238,0.3)]">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] via-[#ffffff] to-[#d8b4fe] animate-gradient-x drop-shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-[length:200%_auto]">
                   Digital Future
                 </span>
               </h1>
