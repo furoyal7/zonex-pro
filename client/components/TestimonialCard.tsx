@@ -42,18 +42,18 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
       </div>
 
       {/* Quote */}
-      <p className="text-sm leading-relaxed flex-grow" style={{ color: "var(--text-secondary)" }}>
+      <p className="text-sm leading-relaxed flex-grow" style={{ color: "var(--color-text-secondary)" }}>
         &ldquo;{quote}&rdquo;
       </p>
 
       {/* Author */}
-      <div className="flex items-center gap-3 pt-2 border-t" style={{ borderColor: "var(--border-light)" }}>
+      <div className="flex items-center gap-3 pt-2 border-t" style={{ borderColor: "var(--color-border-light)" }}>
         <div className="w-10 h-10 rounded-full bg-gradient-to-br from-indigo-500 to-cyan-400 flex items-center justify-center text-white text-sm font-bold shrink-0">
           {avatarFallback}
         </div>
         <div>
           <p className="font-semibold text-sm">{name}</p>
-          <p className="text-xs" style={{ color: "var(--text-muted)" }}>{role}</p>
+          <p className="text-xs" style={{ color: "var(--color-text-muted)" }}>{role}</p>
         </div>
       </div>
     </motion.div>
@@ -61,3 +61,4 @@ const TestimonialCard: React.FC<TestimonialCardProps> = ({
 };
 
 export default TestimonialCard;
+

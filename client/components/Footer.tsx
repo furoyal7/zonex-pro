@@ -29,8 +29,8 @@ const Footer: React.FC = () => {
     <footer
       className="border-t mt-20"
       style={{
-        background: "var(--surface)",
-        borderColor: "var(--border)",
+        background: "var(--color-surface)",
+        borderColor: "var(--color-border)",
       }}
     >
       <div className="container-custom py-16 md:py-20">
@@ -55,14 +55,14 @@ const Footer: React.FC = () => {
                     <path d="M32 8 L8 32" stroke="url(#grad2)" strokeWidth="6" strokeLinecap="round" className="opacity-100 mix-blend-screen"/>
                   </svg>
                 </div>
-                <span className="text-xl font-bold tracking-tight" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif", color: "var(--text-primary)" }}>
-                  ZONEX<span className="text-cyan-500">-</span>PRO
+                <span className="text-xl font-bold tracking-tight" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif", color: "var(--color-text-primary)" }}>
+                  ZONEX<span className="text-accent">-</span>PRO
                 </span>
               </div>
             </Link>
             <p
               className="text-sm leading-relaxed mb-6 max-w-xs"
-              style={{ color: "var(--text-secondary)" }}
+              style={{ color: "var(--color-text-secondary)" }}
             >
               Innovating at the intersection of business and technology. Professional digital
               experiences that drive growth.
@@ -75,11 +75,11 @@ const Footer: React.FC = () => {
                   target="_blank"
                   rel="noopener noreferrer"
                   aria-label={social.label}
-                  className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-indigo-50 hover:text-indigo-600 dark:hover:bg-indigo-500/10"
+                  className="w-11 h-11 rounded-lg flex items-center justify-center transition-all duration-200 hover:bg-primary-50 hover:text-primary dark:hover:bg-indigo-500/10"
                   style={{
-                    color: "var(--text-muted)",
-                    background: "var(--surface-elevated)",
-                    border: "1px solid var(--border-light)",
+                    color: "var(--color-text-muted)",
+                    background: "var(--color-surface-elevated)",
+                    border: "1px solid var(--color-border-light)",
                   }}
                 >
                   <social.icon size={16} strokeWidth={2} />
@@ -92,8 +92,10 @@ const Footer: React.FC = () => {
           <div>
             <h4
               className="font-semibold text-sm mb-5"
-              style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}
-            >
+              style={{
+            fontFamily: "var(--font-outfit), 'Outfit', sans-serif",
+            color: "var(--color-text-primary)",
+          }}  >
               Explore
             </h4>
             <ul className="space-y-3">
@@ -102,7 +104,7 @@ const Footer: React.FC = () => {
                   <Link
                     href={link.href}
                     className="text-sm transition-colors duration-200 hover:text-indigo-600"
-                    style={{ color: "var(--text-secondary)" }}
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     {link.name}
                   </Link>
@@ -125,7 +127,7 @@ const Footer: React.FC = () => {
                   <Link
                     href={link.href}
                     className="text-sm transition-colors duration-200 hover:text-indigo-600"
-                    style={{ color: "var(--text-secondary)" }}
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     {link.name}
                   </Link>
@@ -147,7 +149,7 @@ const Footer: React.FC = () => {
                 <a
                   href="mailto:info@zonex-pro.com"
                   className="flex items-center gap-2.5 text-sm transition-colors duration-200 hover:text-indigo-600"
-                  style={{ color: "var(--text-secondary)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   <Mail size={14} className="text-indigo-500 shrink-0" />
                   info@zonex-pro.com
@@ -157,7 +159,7 @@ const Footer: React.FC = () => {
                 <a
                   href="tel:+15550000000"
                   className="flex items-center gap-2.5 text-sm transition-colors duration-200 hover:text-indigo-600"
-                  style={{ color: "var(--text-secondary)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   <Phone size={14} className="text-indigo-500 shrink-0" />
                   +1 (555) 000-0000
@@ -166,7 +168,7 @@ const Footer: React.FC = () => {
               <li>
                 <div
                   className="flex items-start gap-2.5 text-sm"
-                  style={{ color: "var(--text-secondary)" }}
+                  style={{ color: "var(--color-text-secondary)" }}
                 >
                   <MapPin size={14} className="text-indigo-500 shrink-0 mt-0.5" />
                   <span>
@@ -183,11 +185,11 @@ const Footer: React.FC = () => {
         {/* Bottom bar */}
         <div
           className="border-t mt-14 pt-8 flex flex-col sm:flex-row justify-between items-center gap-4"
-          style={{ borderColor: "var(--border-light)" }}
+          style={{ borderColor: "var(--color-border-light)" }}
         >
           <p
             className="text-xs font-medium"
-            style={{ color: "var(--text-muted)" }}
+            style={{ color: "var(--color-text-muted)" }}
           >
             © {new Date().getFullYear()} ZONEX-PRO. All rights reserved.
           </p>
@@ -195,14 +197,14 @@ const Footer: React.FC = () => {
             <Link
               href="/privacy"
               className="text-xs font-medium transition-colors hover:text-indigo-600"
-              style={{ color: "var(--text-muted)" }}
+              style={{ color: "var(--color-text-muted)" }}
             >
               Privacy Policy
             </Link>
             <Link
               href="/terms"
               className="text-xs font-medium transition-colors hover:text-indigo-600"
-              style={{ color: "var(--text-muted)" }}
+              style={{ color: "var(--color-text-muted)" }}
             >
               Terms of Service
             </Link>
@@ -214,3 +216,4 @@ const Footer: React.FC = () => {
 };
 
 export default Footer;
+

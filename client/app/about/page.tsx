@@ -63,7 +63,7 @@ export default function AboutPage() {
       </section>
 
       {/* Values */}
-      <section className="section-padding" style={{ background: "var(--surface-elevated)" }}>
+      <section className="section-padding" style={{ background: "var(--color-surface-elevated)" }}>
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeading
@@ -95,7 +95,7 @@ export default function AboutPage() {
                 className="aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl relative overflow-hidden"
                 style={{
                   background: "linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%)",
-                  border: "1px solid var(--border)",
+                  border: "1px solid var(--color-border)",
                 }}
               >
                 <div className="absolute inset-0 flex items-center justify-center">
@@ -150,7 +150,7 @@ export default function AboutPage() {
       </section>
 
       {/* Journey / Milestones */}
-      <section className="section-padding" style={{ background: "var(--surface-elevated)" }}>
+      <section className="section-padding" style={{ background: "var(--color-surface-elevated)" }}>
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeading
@@ -168,7 +168,7 @@ export default function AboutPage() {
                   </div>
                   <div>
                     <h3 className="font-bold text-lg mb-1" style={{ fontFamily: "var(--font-outfit)" }}>{m.title}</h3>
-                    <p className="text-sm" style={{ color: "var(--text-secondary)" }}>{m.description}</p>
+                    <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{m.description}</p>
                   </div>
                 </div>
               </AnimatedSection>
@@ -203,3 +203,4 @@ export default function AboutPage() {
     </div>
   );
 }
+

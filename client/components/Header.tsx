@@ -4,16 +4,18 @@ import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X } from "lucide-react";
+import { Menu, X, ArrowRight } from "lucide-react";
 import Button from "./Button";
+import ThemeToggle from "./ThemeToggle";
 
 const navLinks = [
-  { name: "Home", href: "/" },
-  { name: "Solutions", href: "/#solutions" },
+  { name: "Solutions", href: "/solutions" },
+  { name: "Resources", href: "/resources" },
+  { name: "Case Studies", href: "/case-studies" },
   { name: "Services", href: "/services" },
-  { name: "Team", href: "/#team" },
   { name: "Projects", href: "/projects" },
   { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
 ];
 
 const Header: React.FC = () => {
@@ -82,7 +84,7 @@ const Header: React.FC = () => {
                     ? "text-indigo-600"
                     : "hover:text-indigo-600"
                 }`}
-                style={{ color: isActive ? undefined : "var(--text-secondary)" }}
+                style={{ color: isActive ? undefined : "var(--color-text-secondary)" }}
               >
                 {link.name}
                 {isActive && (
@@ -99,6 +101,7 @@ const Header: React.FC = () => {
               </Link>
             );
           })}
+          <ThemeToggle />
           <div className="ml-3">
             <Link href="/contact">
               <Button variant="primary" size="sm">
@@ -108,15 +111,17 @@ const Header: React.FC = () => {
           </div>
         </nav>
 
-        {/* Mobile Menu Toggle */}
-        <button
-          className="md:hidden p-3 rounded-full transition-colors hover:bg-white/5 active:bg-white/10"
-          style={{ color: "var(--text-primary)" }}
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          aria-label="Toggle menu"
-        >
-          {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
-        </button>
+        <div className="flex items-center md:hidden gap-2">
+          <ThemeToggle />
+          <button
+            className="p-3 rounded-full transition-colors hover:bg-white/5 active:bg-white/10"
+            style={{ color: "var(--color-text-primary)" }}
+            onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            aria-label="Toggle menu"
+          >
+            {isMobileMenuOpen ? <X size={24} /> : <Menu size={24} />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile Menu */}
@@ -127,9 +132,14 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, height: "auto" }}
             exit={{ opacity: 0, height: 0 }}
             transition={{ duration: 0.3, ease: [0.25, 0.4, 0.25, 1] }}
-            className="md:hidden overflow-hidden bg-slate-950/90 backdrop-blur-xl border-t border-white/10"
+            className="md:hidden overflow-hidden relative"
           >
-            <div className="px-5 py-6 flex flex-col gap-4">
+            <div
+              className={`absolute inset-0 transition-opacity duration-500 bg-glass-bg backdrop-blur-md border-b border-glass-border shadow-glass ${
+                isScrolled ? "opacity-100" : "opacity-0"
+              }`}
+            />
+            <div className="px-5 py-6 flex flex-col gap-4 relative z-10">
               <nav className="flex flex-col gap-2">
                 {navLinks.map((link, i) => {
                   const isActive = pathname === link.href;
@@ -164,7 +174,7 @@ const Header: React.FC = () => {
               >
                 <Link href="/contact" onClick={() => setIsMobileMenuOpen(false)}>
                   <Button variant="primary" className="w-full py-4 text-lg shadow-lg shadow-indigo-500/20">
-                    Get Started ->
+                    Get Started <ArrowRight size={20} />
                   </Button>
                 </Link>
               </motion.div>
@@ -177,3 +187,4 @@ const Header: React.FC = () => {
 };
 
 export default Header;
+

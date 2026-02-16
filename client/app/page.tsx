@@ -176,13 +176,13 @@ export default function HomePage() {
       <section className="relative min-h-screen flex items-center overflow-hidden">
         {/* Abstract Grid Background */}
         <div className="absolute inset-0 z-0">
-            <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-20" />
-            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-[#020617]/50 to-[#020617] pointer-events-none" />
+            <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border-light)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border-light)_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_60%_50%_at_50%_0%,#000_70%,transparent_100%)] opacity-30" />
+            <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-transparent via-background/40 to-background pointer-events-none" />
         </div>
 
         {/* Glow Orbs */}
-        <div className="absolute top-[-10%] left-[-10%] w-[500px] h-[500px] rounded-full bg-primary/20 blur-[120px] mix-blend-screen animate-pulse" />
-        <div className="absolute bottom-[-10%] right-[-10%] w-[500px] h-[500px] rounded-full bg-accent/20 blur-[120px] mix-blend-screen animate-pulse" style={{ animationDelay: "2s" }} />
+        <div className="absolute top-[-10%] left-[-10%] w-[600px] h-[600px] rounded-full bg-primary/10 blur-[140px] mix-blend-multiply dark:mix-blend-screen opacity-60 dark:opacity-100 animate-pulse" />
+        <div className="absolute bottom-[-10%] right-[-10%] w-[600px] h-[600px] rounded-full bg-accent/10 blur-[140px] mix-blend-multiply dark:mix-blend-screen opacity-60 dark:opacity-100 animate-pulse" style={{ animationDelay: "2s" }} />
 
         <div className="container-custom relative z-10 py-20 md:py-32">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center">
@@ -203,14 +203,14 @@ export default function HomePage() {
                 </span>
               </div>
 
-              <h1 className="heading-hero mb-6 text-white">
-                Architecting the <br />
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-[#22d3ee] via-[#ffffff] to-[#d8b4fe] animate-gradient-x drop-shadow-[0_0_15px_rgba(34,211,238,0.3)] bg-[length:200%_auto]">
-                  Digital Future
+              <h1 className="heading-hero mb-6 text-text-primary">
+                Digital Tools for <br />
+                <span className="text-primary dark:text-accent-light drop-shadow-[0_0_15px_rgba(99,102,241,0.2)]">
+                  Real-World Success
                 </span>
               </h1>
 
-              <p className="body-lg max-w-lg mb-10 text-slate-300 mx-auto lg:mx-0">
+              <p className="body-lg max-w-lg mb-10 text-text-secondary mx-auto lg:mx-0">
                 ZONEX-PRO delivers high-performance software solutions and AI-driven
                 innovations. We build the systems that power tomorrow&apos;s enterprises.
               </p>
@@ -223,7 +223,7 @@ export default function HomePage() {
                   </Button>
                 </Link>
                 <Link href="/projects" className="w-full sm:w-auto">
-                  <Button size="lg" variant="ghost" className="w-full sm:w-auto border border-slate-700 hover:bg-slate-800 text-white">
+                  <Button size="lg" variant="ghost" className="w-full sm:w-auto border border-border hover:bg-surface-elevated text-text-primary">
                     VIEW WORK
                     <ArrowRight size={16} />
                   </Button>
@@ -247,16 +247,16 @@ export default function HomePage() {
                   {/* Central Core */}
                   <div className="absolute inset-0 flex items-center justify-center">
                     <div className="relative w-32 h-32 bg-gradient-to-br from-primary to-secondary rounded-full blur-2xl opacity-40 animate-pulse" />
-                     <div className="relative z-10 p-8 backdrop-blur-xl bg-slate-900/50 border border-white/10 rounded-2xl shadow-2xl">
+                     <div className="relative z-10 p-8 backdrop-blur-xl bg-surface/50 border border-border-light rounded-2xl shadow-2xl">
                         <Logo className="w-20 h-20" textClassName="hidden" />
                      </div>
                   </div>
 
                   {/* Floating Elements */}
-                  <div className="absolute top-[10%] right-[20%] p-3 bg-slate-900/80 border border-accent/30 rounded-lg backdrop-blur-md shadow-lg animate-float">
+                  <div className="absolute top-[10%] right-[20%] p-3 bg-surface/80 border border-accent/30 rounded-lg backdrop-blur-md shadow-lg animate-float">
                       <Code2 className="text-accent" size={20} />
                   </div>
-                   <div className="absolute bottom-[20%] left-[10%] p-3 bg-slate-900/80 border border-secondary/30 rounded-lg backdrop-blur-md shadow-lg animate-float" style={{ animationDelay: '1.5s' }}>
+                   <div className="absolute bottom-[20%] left-[10%] p-3 bg-surface/80 border border-secondary/30 rounded-lg backdrop-blur-md shadow-lg animate-float" style={{ animationDelay: '1.5s' }}>
                       <Brain className="text-secondary" size={20} />
                   </div>
                </div>
@@ -268,16 +268,16 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════
           2. TRUSTED BY — Logo Strip (Neon Style)
           ═══════════════════════════════════════════ */}
-      <section className="py-12 border-y border-white/5 bg-slate-950/50 backdrop-blur-sm">
+      <section className="py-12 border-y border-border bg-background/50 backdrop-blur-sm">
         <div className="container-custom">
-          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-8 text-slate-500">
+          <p className="text-center text-xs font-semibold uppercase tracking-[0.2em] mb-8 text-text-muted">
             Trusted by Industry Leaders
           </p>
           <div className="flex flex-wrap justify-center items-center gap-x-16 gap-y-8 opacity-60">
             {["NEXT.JS", "VERCEL", "STRIPE", "NOTION", "LINEAR", "FIGMA"].map((brand) => (
               <span
                 key={brand}
-                className="text-lg font-bold tracking-[0.2em] hover:text-white hover:opacity-100 hover:shadow-[0_0_15px_rgba(255,255,255,0.3)] transition-all duration-300 cursor-default"
+                className="text-lg font-bold tracking-[0.2em] hover:text-text-primary hover:opacity-100 hover:shadow-[0_0_15px_rgba(99,102,241,0.2)] transition-all duration-300 cursor-default"
               >
                 {brand}
               </span>
@@ -324,9 +324,9 @@ export default function HomePage() {
             <AnimatedSection direction="left">
               <div className="relative group">
                 <div className="absolute -inset-1 bg-gradient-to-r from-accent via-primary to-secondary rounded-3xl opacity-30 blur-lg group-hover:opacity-60 transition duration-500" />
-                <div className="relative aspect-square bg-[#020617] rounded-3xl border border-white/10 p-8 flex items-center justify-center overflow-hidden">
+                <div className="relative aspect-square bg-background rounded-3xl border border-border p-8 flex items-center justify-center overflow-hidden">
                     {/* Grid Pattern */}
-                     <div className="absolute inset-0 bg-[linear-gradient(to_right,#1e293b_1px,transparent_1px),linear-gradient(to_bottom,#1e293b_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-20" />
+                     <div className="absolute inset-0 bg-[linear-gradient(to_right,var(--color-border)_1px,transparent_1px),linear-gradient(to_bottom,var(--color-border)_1px,transparent_1px)] bg-[size:2rem_2rem] opacity-20" />
                     
                     {/* Center Logo */}
                     <div className="relative z-10 scale-150">
@@ -350,7 +350,7 @@ export default function HomePage() {
                 Innovation Without <br />
                 <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-400">Compromise</span>
               </h2>
-              <p className="body-lg mb-8 text-slate-400">
+              <p className="body-lg mb-8 text-text-secondary">
                 We bridge the gap between visionary concepts and production-ready code. 
                 Our team operates at the bleeding edge of technology to give you an unfair advantage.
               </p>
@@ -360,14 +360,14 @@ export default function HomePage() {
                     <div className="mt-1 p-1 rounded-full bg-green-500/10 group-hover:bg-green-500/20 transition-colors">
                         <CheckCircle2 size={16} className="text-green-500" />
                     </div>
-                    <span className="text-sm font-medium text-slate-300 group-hover:text-white transition-colors">
+                    <span className="text-sm font-medium text-text-secondary group-hover:text-text-primary transition-colors">
                       {point}
                     </span>
                   </li>
                 ))}
               </ul>
               <Link href="/about">
-                <Button variant="outline" className="border-slate-700 text-slate-200 hover:border-white hover:text-white">
+                <Button variant="outline" className="border-border text-text-secondary hover:border-primary hover:text-primary">
                   Discover Our Ethos
                   <ArrowRight size={16} />
                 </Button>
@@ -380,7 +380,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════
           5. SERVICES
           ═══════════════════════════════════════════ */}
-      <section className="section-padding bg-slate-900/30">
+      <section className="section-padding bg-surface/30">
         <div className="container-custom">
           <AnimatedSection>
             <SectionHeading
@@ -405,7 +405,7 @@ export default function HomePage() {
 
           <AnimatedSection className="text-center mt-12">
             <Link href="/services">
-              <Button variant="outline" className="border-slate-700 text-slate-300 hover:bg-slate-800">
+              <Button variant="outline" className="border-border text-text-secondary hover:bg-surface-elevated">
                 Explore Full Capabilities
                 <ArrowRight size={16} />
               </Button>
@@ -429,13 +429,13 @@ export default function HomePage() {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
              {teamMembers.map((member, i) => (
-                <div key={member.name} className="group relative p-6 bg-slate-900/50 border border-white/5 rounded-2xl hover:border-accent/50 transition-colors duration-300">
+                <div key={member.name} className="group relative p-6 bg-surface/50 border border-border rounded-2xl hover:border-accent/50 transition-colors duration-300">
                    <div className="w-16 h-16 rounded-full bg-gradient-to-br from-primary to-secondary mb-4 flex items-center justify-center text-white font-bold text-xl">
                       {member.name.charAt(0)}
                    </div>
-                   <h3 className="text-xl font-bold text-white mb-1">{member.name}</h3>
+                   <h3 className="text-xl font-bold text-text-primary mb-1">{member.name}</h3>
                    <p className="text-accent text-sm font-medium uppercase tracking-wider mb-2">{member.role}</p>
-                   <p className="text-slate-500 text-sm">{member.specialty}</p>
+                   <p className="text-text-muted text-sm">{member.specialty}</p>
 
                    {/* Neon corner accent */}
                    <div className="absolute top-0 right-0 w-8 h-8 border-t-2 border-r-2 border-accent/0 group-hover:border-accent/50 rounded-tr-2xl transition-all duration-300" />
@@ -449,7 +449,7 @@ export default function HomePage() {
       {/* ═══════════════════════════════════════════
           6. STATS (Updated)
           ═══════════════════════════════════════════ */}
-      <section className="py-20 border-y border-white/5 bg-[#020617] relative overflow-hidden">
+      <section className="py-20 border-y border-border bg-background relative overflow-hidden">
         {/* Background Glow */}
         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5" />
         
@@ -458,12 +458,12 @@ export default function HomePage() {
             {stats.map((stat, i) => (
               <AnimatedSection key={stat.label} delay={i * 0.1} className="text-center group">
                 <motion.div
-                  className="text-5xl md:text-6xl font-bold mb-2 text-transparent bg-clip-text bg-gradient-to-br from-white to-slate-500 group-hover:from-accent group-hover:to-primary transition-all duration-500"
+                  className="text-5xl md:text-6xl font-bold mb-2 text-text-primary transition-all duration-500"
                   style={{ fontFamily: "var(--font-outfit)" }}
                 >
                   {stat.value}
                 </motion.div>
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-slate-500 group-hover:text-accent transition-colors duration-300">
+                <div className="text-xs font-bold uppercase tracking-[0.2em] text-text-muted group-hover:text-accent transition-colors duration-300">
                   {stat.label}
                 </div>
               </AnimatedSection>
@@ -476,18 +476,18 @@ export default function HomePage() {
           7. CTA SECTION
           ═══════════════════════════════════════════ */}
       <section className="py-24 relative overflow-hidden">
-         <div className="absolute inset-0 bg-gradient-to-b from-[#020617] to-primary/10" />
+         <div className="absolute inset-0 bg-gradient-to-b from-background to-primary/10" />
          
         <div className="container-custom relative z-10">
           <AnimatedSection>
             <div className="rounded-3xl p-1 px-4 md:px-20 text-center relative overflow-hidden">
                {/* Content */}
                <div className="relative z-10 py-16">
-                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-white tracking-tight leading-tight">
+                  <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold mb-8 text-text-primary tracking-tight leading-tight">
                     Ready to Build the <br />
                     <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-300 to-indigo-400">Impossible?</span>
                   </h2>
-                  <p className="text-slate-400 text-lg max-w-xl mx-auto mb-12">
+                  <p className="text-text-secondary text-lg max-w-xl mx-auto mb-12">
                     Let&apos;s discuss how ZONEX-PRO can engineer your next breakthrough. 
                     The future doesn&apos;t wait.
                   </p>
@@ -505,3 +505,4 @@ export default function HomePage() {
     </div>
   );
 }
+

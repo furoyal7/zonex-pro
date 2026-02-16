@@ -5,78 +5,69 @@
    ═══════════════════════════════════════════════ */
 
 :root {
-  /* FUTURISTIC NEON PALETTE */
-  /* Primary: Electric/Neon Indigo */
-  --primary: #6366f1;
-  --primary-light: #818cf8;
-  --primary-dark: #4f46e5;
-  --primary-50: #0f172a; /* Darker for futuristic feel */
-  --primary-100: #1e1b4b;
-  --primary-200: #312e81;
-  --primary-500: #6366f1;
-  --primary-600: #4f46e5;
-  --primary-700: #4338ca;
-  --primary-900: #312e81;
+  /* FUTURISTIC NEON PALETTE - Base colors */
+  --color-primary: #6366f1;
+  --color-primary-light: #818cf8;
+  --color-primary-dark: #4f46e5;
+  --color-primary-50: #f8fafc;
+  --color-primary-100: #eef2ff;
+  --color-primary-200: #e0e7ff;
+  --color-primary-500: #6366f1;
+  --color-primary-600: #4f46e5;
+  --color-primary-700: #4338ca;
+  --color-primary-900: #312e81;
 
   /* Accent: Neon Cyan */
-  --accent: #22d3ee; /* Brighter Cyan */
-  --accent-light: #67e8f9;
+  --color-accent: #06b6d4; 
+  --color-accent-light: #22d3ee;
 
   /* Secondary: Deep Purple */
-  --secondary: #a855f7;
-  --secondary-light: #c084fc;
+  --color-secondary: #a855f7;
+  --color-secondary-light: #c084fc;
 
-  /* Surfaces - Deep Space Theme */
-  --background: #020617; /* Slate 950 */
-  --surface: #0f172a; /* Slate 900 */
-  --surface-elevated: #1e293b; /* Slate 800 */
+  /* PREMIUM LIGHT THEME VARIABLES (MODERN & CLEAN) */
+  --color-background: #fafafa; /* Premium Off-White */
+  --color-surface: #ffffff;
+  --color-surface-elevated: #fefefe;
+  --color-text-primary: #1a1a1a; /* Professional Charcoal */
+  --color-text-secondary: #525252; /* Muted Grey */
+  --color-text-muted: #737373; /* Neutral Slate */
+  --color-border: #e5e5e5; /* Soft borders */
+  --color-border-light: #f5f5f5; 
+  
+  --glass-bg: rgba(240, 249, 255, 0.6); /* Soft sky blue glass tint */
+  --glass-border: rgba(99, 102, 241, 0.08);
+  --glass-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
 
-  /* Text */
-  --text-primary: #f8fafc;
-  --text-secondary: #94a3b8; /* Slate 400 */
-  --text-muted: #64748b; /* Slate 500 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.05);
+  --shadow-lg: 0 10px 30px -3px rgba(0, 0, 0, 0.06);
+  --shadow-xl: 0 20px 40px -5px rgba(0, 0, 0, 0.08);
 
-  /* Borders */
-  --border: #1e293b;
-  --border-light: #334155;
-
-  /* Glass - Tech/Frosted */
-  --glass-bg: rgba(15, 23, 42, 0.7);
-  --glass-border: rgba(99, 102, 241, 0.2); /* Indigo tint */
-  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-
-  /* Shadows - Glow Effects */
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.5);
-  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.5);
-  --shadow-lg: 0 0 20px rgba(99, 102, 241, 0.15); /* Primary Glow */
-  --shadow-xl: 0 0 40px rgba(6, 182, 212, 0.15); /* Accent Glow */
-
-  /* Radii - Geostyle */
-  --radius-md: 4px;
-  --radius-lg: 8px;
-  --radius-xl: 12px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-xl: 24px;
   --radius-full: 9999px;
 }
 
-/* Dark Mode (Default) */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #020617;
-    --surface: #0f172a;
-    --surface-elevated: #1e293b;
-    --text-primary: #f8fafc;
-    --text-secondary: #94a3b8;
-    --text-muted: #64748b;
-    --border: #1e293b;
-    --border-light: #334155;
-    
-    --glass-bg: rgba(2, 6, 23, 0.8);
-    --glass-border: rgba(99, 102, 241, 0.2);
-    --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-    
-    --shadow-lg: 0 0 25px rgba(99, 102, 241, 0.2);
-    --shadow-xl: 0 0 50px rgba(6, 182, 212, 0.2);
-  }
+[data-theme='dark'], .dark {
+  --color-background: #020617; /* Slate 950 */
+  --color-surface: #0f172a; /* Slate 900 */
+  --color-surface-elevated: #1e293b; /* Slate 800 */
+  --color-text-primary: #f8fafc;
+  --color-text-secondary: #94a3b8; /* Slate 400 */
+  --color-text-muted: #64748b;
+  --color-border: #1e293b;
+  --color-border-light: #334155;
+  
+  --glass-bg: rgba(2, 6, 23, 0.8);
+  --glass-border: rgba(99, 102, 241, 0.2);
+  --glass-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  
+  --shadow-lg: 0 0 25px rgba(99, 102, 241, 0.2);
+  --shadow-xl: 0 0 50px rgba(6, 182, 212, 0.2);
+
+  --color-primary-50: #0f172a;
 }
 
 
@@ -89,22 +80,23 @@ html {
 }
 
 body {
-  color: var(--text-primary);
-  background: var(--background);
+  color: var(--color-text-primary);
+  background: var(--color-background);
   font-family: var(--font-inter), 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
   overflow-x: hidden;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, opacity 0.3s ease;
 }
 
 ::selection {
-  background: var(--primary-200);
-  color: var(--primary-900);
+  background: var(--color-primary-200);
+  color: var(--color-primary-900);
 }
 
 @media (prefers-color-scheme: dark) {
   ::selection {
-    background: var(--primary-700);
+    background: var(--color-primary-700);
     color: white;
   }
 }
@@ -115,20 +107,28 @@ body {
 
 @layer components {
   .container-custom {
-    @apply max-w-7xl mx-auto px-5 sm:px-6 lg:px-8;
+    @apply container mx-auto px-6 md:px-12 lg:px-20;
   }
 
   .glass-card {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: var(--radius-lg);
+    background: var(--color-surface);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid var(--color-border-light);
     box-shadow: var(--shadow-md);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    @apply rounded-xl transition-all duration-300;
+  }
+
+  [data-theme='dark'] .glass-card, .dark .glass-card {
+    background: rgba(15, 23, 42, 0.6);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
   }
 
   .glass-card:hover {
-    box-shadow: var(--shadow-lg);
-    border-color: var(--primary-200);
+    box-shadow: var(--shadow-xl);
+    transform: translateY(-2px);
+    border-color: var(--color-primary-200);
   }
 
   @media (prefers-color-scheme: dark) {
@@ -138,8 +138,8 @@ body {
   }
 
   .glass-nav {
-    background: var(--background);
-    border-bottom: 1px solid var(--border);
+    background: var(--color-background);
+    border-bottom: 1px solid var(--color-border);
     box-shadow: var(--shadow-sm);
   }
 
@@ -153,26 +153,38 @@ body {
   }
 
   .heading-hero {
-    @apply text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-[1.1];
-    font-family: var(--font-outfit), 'Outfit', sans-serif;
-  }
+  @apply text-5xl md:text-7xl lg:text-8xl font-bold tracking-tight leading-[1.05];
+  font-family: var(--font-outfit), 'Outfit', sans-serif;
+}
 
-  .heading-section {
-    @apply text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight;
-    font-family: var(--font-outfit), 'Outfit', sans-serif;
-  }
+.heading-section {
+  @apply text-3xl md:text-4xl lg:text-5xl font-bold tracking-tight leading-tight;
+  font-family: var(--font-outfit), 'Outfit', sans-serif;
+  color: var(--color-text-primary);
+}
 
-  .body-lg {
-    @apply text-base sm:text-lg leading-relaxed;
-    color: var(--text-secondary);
-  }
+.body-lg {
+  @apply text-lg md:text-xl leading-relaxed;
+  color: var(--color-text-secondary);
+}
 
-  .badge {
-    @apply inline-flex items-center gap-2 px-4 py-1.5 rounded-full text-xs font-semibold tracking-wider uppercase;
-    background: var(--primary-50);
-    color: var(--primary);
-    border: 1px solid var(--primary-100);
-  }
+.body-md {
+  @apply text-base leading-relaxed;
+  color: var(--color-text-secondary);
+}
+
+.badge {
+  @apply inline-flex items-center px-3 py-1 rounded-full text-xs font-bold tracking-[0.2em] uppercase;
+  background: var(--color-primary-50);
+  color: var(--color-primary);
+  border: 1px solid var(--color-primary-100);
+}
+
+[data-theme='dark'] .badge, .dark .badge {
+  background: rgba(99, 102, 241, 0.1);
+  color: #818cf8;
+  border: 1px solid rgba(99, 102, 241, 0.2);
+}
 
   @media (prefers-color-scheme: dark) {
     .badge {
@@ -242,6 +254,10 @@ body {
   animation: gradient-x 15s ease infinite;
 }
 
+.animate-gradient-x {
+  animation: gradient-x 15s ease infinite;
+}
+
 /* ═══════════════════════════════════════════════
    Custom Scrollbar
    ═══════════════════════════════════════════════ */
@@ -255,7 +271,7 @@ body {
 }
 
 ::-webkit-scrollbar-thumb {
-  background: var(--border);
+  background: var(--color-border);
   border-radius: 3px;
 }
 
@@ -271,3 +287,4 @@ body {
   color: #f59e0b;
   fill: #f59e0b;
 }
+

@@ -75,7 +75,7 @@ export default function ProjectsPage() {
       </section>
 
       {/* Projects Grid */}
-      <section className="section-padding" style={{ background: "var(--surface-elevated)" }}>
+      <section className="section-padding" style={{ background: "var(--color-surface-elevated)" }}>
         <div className="container-custom">
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8">
             {projects.map((project, i) => (
@@ -102,7 +102,7 @@ export default function ProjectsPage() {
                         background: "var(--glass-bg)",
                         backdropFilter: "blur(12px)",
                         border: "1px solid var(--glass-border)",
-                        color: "var(--text-primary)",
+                        color: "var(--color-text-primary)",
                       }}
                     >
                       {project.category}
@@ -125,7 +125,7 @@ export default function ProjectsPage() {
                   </h3>
                   <p
                     className="text-sm leading-relaxed mb-6"
-                    style={{ color: "var(--text-secondary)" }}
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     {project.description}
                   </p>
@@ -169,7 +169,7 @@ export default function ProjectsPage() {
                 </div>
                 <div
                   className="text-xs font-semibold uppercase tracking-widest"
-                  style={{ color: "var(--text-muted)" }}
+                  style={{ color: "var(--color-text-muted)" }}
                 >
                   {stat.label}
                 </div>
@@ -208,3 +208,4 @@ export default function ProjectsPage() {
     </div>
   );
 }
+

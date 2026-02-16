@@ -32,7 +32,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       <h3 className="text-lg font-bold mb-2 tracking-tight" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>
         {title}
       </h3>
-      <p className="text-sm leading-relaxed" style={{ color: "var(--text-secondary)" }}>
+      <p className="text-sm leading-relaxed" style={{ color: "var(--color-text-secondary)" }}>
         {description}
       </p>
     </motion.div>
@@ -40,3 +40,4 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 };
 
 export default FeatureCard;
+

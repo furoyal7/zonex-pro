@@ -74,7 +74,7 @@ export const Logo: React.FC<{
           className={`font-bold tracking-wide ${textClassName}`}
           style={{
             fontFamily: "var(--font-outfit), 'Outfit', sans-serif",
-            color: "var(--text-primary)",
+            color: "var(--color-text-primary)",
           }}
         >
           ZONEX
@@ -87,3 +87,4 @@ export const Logo: React.FC<{
     </div>
   );
 };
+

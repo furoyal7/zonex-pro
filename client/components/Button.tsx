@@ -19,17 +19,17 @@ const Button: React.FC<ButtonProps> = ({
   ...props
 }) => {
   const baseStyles =
-    "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-indigo-500 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
+    "inline-flex items-center justify-center font-semibold transition-all duration-200 focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:ring-primary disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer";
 
   const variants: Record<string, string> = {
     primary:
-      "bg-gradient-to-r from-indigo-600 to-indigo-500 text-white shadow-md shadow-indigo-500/20 hover:shadow-lg hover:shadow-indigo-500/30 rounded-full",
+      "bg-gradient-to-r from-primary-600 to-primary-500 text-white shadow-md shadow-primary-500/20 hover:shadow-lg hover:shadow-primary-500/30 rounded-full",
     secondary:
-      "bg-white text-indigo-700 shadow-md hover:shadow-lg border border-gray-200 rounded-full",
+      "bg-surface text-primary shadow-sm hover:shadow-md border border-border rounded-full",
     outline:
-      "border-2 border-indigo-500 text-indigo-600 hover:bg-indigo-50 rounded-full",
+      "border-2 border-primary text-primary hover:bg-primary-50 rounded-full",
     ghost:
-      "text-gray-600 hover:text-indigo-600 hover:bg-indigo-50 rounded-xl",
+      "text-text-secondary hover:text-primary hover:bg-primary-50 rounded-xl",
   };
 
   const sizes: Record<string, string> = {
@@ -40,8 +40,8 @@ const Button: React.FC<ButtonProps> = ({
 
   return (
     <motion.button
-      whileHover={{ scale: 1.03 }}
-      whileTap={{ scale: 0.97 }}
+      whileHover={{ scale: 1.05 }}
+      whileTap={{ scale: 0.95 }}
       transition={{ type: "spring", stiffness: 400, damping: 17 }}
       className={`${baseStyles} ${variants[variant]} ${sizes[size]} ${className}`}
       disabled={isLoading || (props as React.ButtonHTMLAttributes<HTMLButtonElement>).disabled}
@@ -75,3 +75,4 @@ const Button: React.FC<ButtonProps> = ({
 };
 
 export default Button;
+

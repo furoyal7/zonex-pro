@@ -178,7 +178,7 @@ export default function ServicesPage() {
       </section>
 
       {/* ── Service Cards ──────────────────────── */}
-      <section className="py-20 md:py-28" style={{ background: "var(--surface-elevated)" }}>
+      <section className="py-20 md:py-28" style={{ background: "var(--color-surface-elevated)" }}>
         <div className="container-custom">
           <motion.div {...fadeUp(0)} className="text-center mb-14 md:mb-16">
             <span className="badge mb-4 inline-flex">What We Offer</span>
@@ -208,17 +208,17 @@ export default function ServicesPage() {
                   }}
                   className="rounded-2xl p-7 md:p-8 transition-all duration-300 hover:-translate-y-1 cursor-default group"
                   style={{
-                    background: "var(--surface)",
-                    border: "1px solid var(--border-light)",
+                    background: "var(--color-surface)",
+                    border: "1px solid var(--color-border-light)",
                     boxShadow: "var(--shadow-sm)",
                   }}
                   onMouseEnter={(e) => {
                     e.currentTarget.style.boxShadow = "var(--shadow-md)";
-                    e.currentTarget.style.borderColor = "var(--border)";
+                    e.currentTarget.style.borderColor = "var(--color-border)";
                   }}
                   onMouseLeave={(e) => {
                     e.currentTarget.style.boxShadow = "var(--shadow-sm)";
-                    e.currentTarget.style.borderColor = "var(--border-light)";
+                    e.currentTarget.style.borderColor = "var(--color-border-light)";
                   }}
                 >
                   {/* Icon */}
@@ -233,7 +233,7 @@ export default function ServicesPage() {
                     className="text-base font-semibold mb-2.5 tracking-tight"
                     style={{
                       fontFamily: "var(--font-outfit), 'Outfit', sans-serif",
-                      color: "var(--text-primary)",
+                      color: "var(--color-text-primary)",
                     }}
                   >
                     {service.title}
@@ -241,7 +241,7 @@ export default function ServicesPage() {
 
                   <p
                     className="text-[13px] leading-relaxed mb-5"
-                    style={{ color: "var(--text-secondary)" }}
+                    style={{ color: "var(--color-text-secondary)" }}
                   >
                     {service.description}
                   </p>
@@ -251,7 +251,7 @@ export default function ServicesPage() {
                       <li
                         key={feature}
                         className="flex items-center gap-2 text-[13px]"
-                        style={{ color: "var(--text-secondary)" }}
+                        style={{ color: "var(--color-text-secondary)" }}
                       >
                         <Check
                           size={14}
@@ -307,14 +307,14 @@ export default function ServicesPage() {
                   className="font-semibold text-sm mb-1.5"
                   style={{
                     fontFamily: "var(--font-outfit)",
-                    color: "var(--text-primary)",
+                    color: "var(--color-text-primary)",
                   }}
                 >
                   {step.title}
                 </h3>
                 <p
                   className="text-xs leading-relaxed"
-                  style={{ color: "var(--text-muted)" }}
+                  style={{ color: "var(--color-text-muted)" }}
                 >
                   {step.desc}
                 </p>
@@ -327,7 +327,7 @@ export default function ServicesPage() {
       {/* ── Tech Stack ─────────────────────────── */}
       <section
         className="py-16 md:py-24"
-        style={{ background: "var(--surface-elevated)" }}
+        style={{ background: "var(--color-surface-elevated)" }}
       >
         <div className="container-custom text-center">
           <motion.div {...fadeUp(0)} className="mb-12">
@@ -349,17 +349,17 @@ export default function ServicesPage() {
                 }}
                 className="px-4 py-2 rounded-lg text-xs font-semibold tracking-wide cursor-default transition-all duration-200 hover:-translate-y-0.5"
                 style={{
-                  background: "var(--surface)",
-                  border: "1px solid var(--border-light)",
-                  color: "var(--text-muted)",
+                  background: "var(--color-surface)",
+                  border: "1px solid var(--color-border-light)",
+                  color: "var(--color-text-muted)",
                 }}
                 onMouseEnter={(e) => {
-                  e.currentTarget.style.borderColor = "var(--border)";
-                  e.currentTarget.style.color = "var(--text-primary)";
+                  e.currentTarget.style.borderColor = "var(--color-border)";
+                  e.currentTarget.style.color = "var(--color-text-primary)";
                 }}
                 onMouseLeave={(e) => {
-                  e.currentTarget.style.borderColor = "var(--border-light)";
-                  e.currentTarget.style.color = "var(--text-muted)";
+                  e.currentTarget.style.borderColor = "var(--color-border-light)";
+                  e.currentTarget.style.color = "var(--color-text-muted)";
                 }}
               >
                 {tech}
@@ -406,3 +406,4 @@ export default function ServicesPage() {
     </div>
   );
 }
+

@@ -45,7 +45,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 
         <p
           className="text-sm leading-relaxed mb-6"
-          style={{ color: "var(--text-secondary)" }}
+          style={{ color: "var(--color-text-secondary)" }}
         >
           {description}
         </p>
@@ -55,7 +55,7 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
             <li
               key={i}
               className="flex items-center gap-2.5 text-sm font-medium"
-              style={{ color: "var(--text-secondary)" }}
+              style={{ color: "var(--color-text-secondary)" }}
             >
               <div className="w-5 h-5 rounded-full bg-green-50 dark:bg-green-500/10 flex items-center justify-center text-green-600 shrink-0">
                 <Check size={12} strokeWidth={3} />
@@ -70,3 +70,4 @@ const ServiceCard: React.FC<ServiceCardProps> = ({
 };
 
 export default ServiceCard;
+

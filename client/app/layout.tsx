@@ -4,6 +4,8 @@ import "./globals.css";
 
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FloatingChatbot from "@/components/FloatingChatbot";
+import { ThemeProvider } from "@/components/ThemeProvider";
 
 const inter = Inter({
   subsets: ["latin"],
@@ -56,11 +58,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`}>
-      <body className="antialiased min-h-screen flex flex-col">
-        <Header />
-        <main className="flex-grow pt-14">{children}</main>
-        <Footer />
+    <html lang="en" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
+      <body className="antialiased min-h-screen flex flex-col bg-background text-text-primary transition-colors duration-300">
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="light"
+          enableSystem
+          disableTransitionOnChange
+        >
+          <Header />
+          <main className="flex-grow pt-14">{children}</main>
+          <Footer />
+          <FloatingChatbot />
+        </ThemeProvider>
       </body>
     </html>
   );
