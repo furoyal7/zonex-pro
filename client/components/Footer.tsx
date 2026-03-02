@@ -4,7 +4,7 @@ import { Logo } from "./Logo";
 
 const Footer: React.FC = () => {
   return (
-    <footer className="bg-black border-t border-white/5 mt-auto">
+    <footer className="bg-[#0E0E10] border-t border-accent/20 mt-auto">
       <div className="container-custom py-20 px-6 md:px-12">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-16 md:gap-12">
           {/* Brand Column */}
@@ -46,12 +46,12 @@ const Footer: React.FC = () => {
           </div>
         </div>
 
-        <div className="mt-20 pt-10 border-t border-white/5 flex flex-col md:flex-row justify-between items-center gap-6">
+        <div className="mt-20 pt-10 border-t border-accent/20 flex flex-col md:flex-row justify-between items-center gap-6">
           <p className="text-white/30 text-[11px] font-bold uppercase tracking-widest">
             © {new Date().getFullYear()} Safenetics Intelligence Corp.
           </p>
           <div className="flex gap-8">
-            <span className="text-white/20 text-[11px] font-bold uppercase tracking-widest">System Status: Active</span>
+            <span className="text-accent/40 text-[11px] font-bold uppercase tracking-widest">System Status: <span className="text-accent">Active</span></span>
           </div>
         </div>
       </div>

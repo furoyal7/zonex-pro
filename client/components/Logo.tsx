@@ -17,21 +17,21 @@ export const Logo: React.FC<{
             <rect width="40" height="40" rx="8" fill="var(--color-surface-elevated)" />
             <path 
               d="M20 10V30M10 20H30" 
-              stroke="var(--accent-blue)" 
+              stroke="var(--accent-bronze)" 
               strokeWidth="2.5" 
               strokeLinecap="square"
               className="opacity-80"
             />
             <path 
               d="M15 15L25 25M25 15L15 25" 
-              stroke="var(--accent-blue)" 
+              stroke="var(--accent-bronze)" 
               strokeWidth="1.5" 
               strokeLinecap="square"
               className="opacity-40"
             />
             <rect 
               x="18" y="18" width="4" height="4" 
-              fill="var(--accent-blue)" 
+              fill="var(--accent-bronze)" 
               className="animate-pulse"
             />
           </svg>

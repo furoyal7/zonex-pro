@@ -38,9 +38,12 @@ export default function SecuritySolutionPage() {
         <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent pointer-events-none" />
         <div className="relative z-10 text-center max-w-5xl">
           <motion.div {...fadeUp(0)}>
-            <div className="w-20 h-20 rounded-[24px] bg-white/5 flex items-center justify-center mb-10 mx-auto text-white/30">
+            <div className="w-20 h-20 rounded-[24px] bg-white/5 flex items-center justify-center mb-6 mx-auto text-white/30">
               <Shield size={40} strokeWidth={1} />
             </div>
+            <span className="text-[10px] font-black uppercase tracking-[0.4em] text-accent-blue mb-4 block font-mono">
+              Enterprise Solutions
+            </span>
             <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-10 leading-[0.95]">
               Zero-Trust <br />
               <span className="text-white/20">Security Protocol.</span>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Outfit } from "next/font/google";
+import { Inter, Outfit, Sora } from "next/font/google";
 import "./globals.css";
 
 import Header from "@/components/Header";
@@ -13,9 +13,9 @@ const inter = Inter({
   display: "swap",
 });
 
-const outfit = Outfit({
+const sora = Sora({
   subsets: ["latin"],
-  variable: "--font-outfit",
+  variable: "--font-sora",
   display: "swap",
 });
 
@@ -58,7 +58,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" className={`${inter.variable} ${outfit.variable}`} suppressHydrationWarning>
+    <html lang="en" className={`${inter.variable} ${sora.variable}`} suppressHydrationWarning>
       <body className="antialiased min-h-screen flex flex-col bg-background text-text-primary transition-colors duration-300">
         <ThemeProvider
           attribute="class"

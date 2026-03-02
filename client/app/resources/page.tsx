@@ -52,7 +52,7 @@ export default function ResourceHubPage() {
   return (
     <div className="flex flex-col bg-black text-white px-6">
       {/* Hero Section */}
-      <section className="h-[70vh] flex flex-col justify-center border-b border-white/5 relative overflow-hidden">
+      <section className="h-[70dvh] flex flex-col justify-center border-b border-white/5 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
         <div className="container-custom mx-auto px-6 md:px-12">
           <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
@@ -95,7 +95,7 @@ export default function ResourceHubPage() {
                 >
                   <div className="p-10 flex flex-col flex-grow">
                     <div className="flex items-center gap-4 mb-10">
-                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-white/30 group-hover:text-white group-hover:bg-white/10 transition-all duration-500">
+                      <div className="w-14 h-14 rounded-2xl bg-black/[0.03] border border-white/5 flex items-center justify-center text-white/30 group-hover:text-white group-hover:bg-accent transition-all duration-500">
                         <Icon size={28} strokeWidth={1.5} />
                       </div>
                       <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20">{res.type}</div>
@@ -114,7 +114,7 @@ export default function ResourceHubPage() {
                          <span className="text-[10px] uppercase font-bold tracking-widest text-white/20 mb-1">Author</span>
                          <span className="text-[11px] font-bold text-white/60">{res.author}</span>
                        </div>
-                       <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-white/20 group-hover/footer:bg-white group-hover/footer:text-black transition-all">
+                       <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-white/20 group-hover/footer:bg-accent group-hover/footer:text-white transition-all">
                          <ArrowRight size={18} />
                        </div>
                     </div>
@@ -127,7 +127,7 @@ export default function ResourceHubPage() {
       </section>
 
       {/* Subscription Section */}
-      <section className="h-[50vh] flex flex-col items-center justify-center border-t border-white/5 bg-black">
+      <section className="h-[50dvh] flex flex-col items-center justify-center border-t border-white/5 bg-black">
         <motion.div 
            {...fadeUp(0)}
            className="text-center max-w-2xl"
@@ -141,7 +141,7 @@ export default function ResourceHubPage() {
                 placeholder="Secure Email Address" 
                 className="px-8 py-5 bg-white/[0.02] border border-white/10 rounded-full focus:outline-none focus:border-white/30 transition-all w-full sm:w-[320px] text-sm font-medium" 
               />
-              <button className="px-10 py-5 bg-white text-black font-black rounded-full text-sm uppercase tracking-tighter whitespace-nowrap hover:scale-105 active:scale-95 transition-all">Submit Access</button>
+              <button className="px-10 py-5 bg-white text-black font-black rounded-full text-sm uppercase tracking-tighter whitespace-nowrap hover:scale-105 hover:bg-accent hover:text-white active:scale-95 transition-all shadow-[0_4px_30px_rgba(140,107,79,0.1)]">Submit Access</button>
            </div>
         </motion.div>
       </section>

@@ -19,7 +19,7 @@ const caseStudies = [
     category: "AI & Automation",
     stats: "45% Reduction in Latency",
     description: "How we implemented a custom LLM orchestration layer to handle 10M+ daily financial transactions with zero downtime.",
-    image: "bg-indigo-500/10",
+    image: "bg-accent/5",
     size: "lg", // span 2 cols
   },
   {
@@ -27,7 +27,7 @@ const caseStudies = [
     category: "Cloud Infrastructure",
     stats: "30% Energy Savings",
     description: "Transitioning a legacy retail chain to a serverless edge architecture.",
-    image: "bg-cyan-500/10",
+    image: "bg-accent-blue/5",
     size: "sm",
   },
   {
@@ -35,7 +35,7 @@ const caseStudies = [
     category: "Cybersecurity",
     stats: "Zero Attacks in 12 Months",
     description: "Deploying an immutable security framework for a leading European bank.",
-    image: "bg-emerald-500/10",
+    image: "bg-accent-dark/10",
     size: "sm",
   },
   {
@@ -43,7 +43,7 @@ const caseStudies = [
     category: "AI & Big Data",
     stats: "2x Faster Diagnoses",
     description: "Empowering medical researchers with real-time predictive analytics on petabytes of clinical data.",
-    image: "bg-purple-500/10",
+    image: "bg-accent/10",
     size: "md",
   },
 ];
@@ -52,7 +52,7 @@ const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
   viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, delay, ease: "easeOut" as any },
+  transition: { duration: 0.5, delay, ease: [0.16, 1, 0.3, 1] as any },
 });
 
 export default function CaseStudiesPage() {

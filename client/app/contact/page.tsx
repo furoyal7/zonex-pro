@@ -53,11 +53,11 @@ export default function ContactPage() {
     initial: { opacity: 0, y: 10 },
     animate: { opacity: 1, y: 0 },
     exit: { opacity: 0, y: -10 },
-    transition: { duration: 0.4, ease: "easeOut" }
+    transition: { duration: 0.4, ease: [0.16, 1, 0.3, 1] as any }
   };
 
   return (
-    <div className="flex flex-col min-h-screen bg-black text-white selection:bg-white/20">
+    <div className="flex flex-col min-h-screen bg-[#0E0E10] text-white selection:bg-accent/20">
       <div className="container-custom pt-32 pb-20 px-6 md:px-12 flex-grow max-w-6xl mx-auto">
         
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-20">
@@ -99,13 +99,13 @@ export default function ContactPage() {
           <div className="lg:col-span-8">
             <div className="relative bg-white/[0.02] border border-white/5 rounded-[40px] p-8 md:p-16 overflow-hidden min-h-[600px] flex flex-col">
               
-              {/* Subtle Progress */}
+               {/* Subtle Progress */}
               <div className="absolute top-0 left-0 w-full h-[1px] bg-white/5">
                  <motion.div 
-                   className="h-full bg-white"
+                   className="h-full bg-accent"
                    initial={{ width: "33%" }}
                    animate={{ width: `${(step / 3) * 100}%` }}
-                   transition={{ duration: 0.8, ease: "easeOut" }}
+                   transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] as any }}
                  />
               </div>
 
@@ -239,7 +239,7 @@ export default function ContactPage() {
                              (step === 2 && !formData.scale) ||
                              status === "loading"
                            }
-                           className="flex items-center gap-3 px-10 py-5 bg-white text-black font-black rounded-full shadow-[0_4px_30px_rgba(255,255,255,0.1)] hover:scale-[1.02] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-tighter text-sm"
+                           className="flex items-center gap-3 px-10 py-5 bg-[#8C6B4F] text-white font-black rounded-full shadow-[0_4px_30px_rgba(140,107,79,0.1)] hover:scale-[1.02] hover:bg-[#5C4033] active:scale-[0.98] transition-all disabled:opacity-50 disabled:cursor-not-allowed uppercase tracking-tighter text-sm"
                          >
                             {status === "loading" ? "Initializing..." : (step === 3 ? "Launch Protocol" : "Continue")}
                             <ArrowRight size={18} />

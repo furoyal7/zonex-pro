@@ -39,7 +39,7 @@ const Header: React.FC = () => {
         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-700 h-[30px] flex items-center ${
           isScrolled 
-          ? "bg-black/90 backdrop-blur-xl border-b border-white/5" 
+          ? "bg-[#0E0E10]/90 backdrop-blur-xl border-b border-white/5" 
           : "bg-transparent"
         }`}
       >
@@ -65,7 +65,7 @@ const Header: React.FC = () => {
           <div className="hidden md:flex items-center gap-6">
             <Link href="/contact">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, backgroundColor: "#8C6B4F", color: "#fff" }}
                 whileTap={{ scale: 0.95 }}
                 className="px-4 py-1 bg-white text-black text-[9px] font-black uppercase rounded-full shadow-lg transition-all"
               >
@@ -91,7 +91,7 @@ const Header: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
             exit={{ opacity: 0, x: "100%" }}
             transition={{ type: "spring", damping: 25, stiffness: 200 }}
-            className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center gap-8 p-10"
+            className="fixed inset-0 z-[60] bg-black flex flex-col items-center justify-center gap-8 p-10 h-[100dvh] overflow-y-auto"
           >
             {navLinks.map((link) => (
               <Link
@@ -104,12 +104,14 @@ const Header: React.FC = () => {
               </Link>
             ))}
             <Link href="/contact" className="mt-8">
-              <button 
-                className="px-10 py-4 bg-white text-black font-bold rounded-full"
+              <motion.button 
+                whileHover={{ scale: 1.05, backgroundColor: "#8C6B4F", color: "#fff" }}
+                whileTap={{ scale: 0.95 }}
+                className="px-10 py-4 bg-white text-black font-bold rounded-full transition-all"
                 onClick={() => setIsMobileMenuOpen(false)}
               >
                 Enterprise Inquiry
-              </button>
+              </motion.button>
             </Link>
           </motion.div>
         )}

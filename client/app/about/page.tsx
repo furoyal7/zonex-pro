@@ -34,9 +34,9 @@ export default function AboutPage() {
   return (
     <div className="flex flex-col bg-black text-white px-6">
       
-      {/* Hero Section - 100vh */}
-      <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
-        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent" />
+      {/* Hero Section - 100dvh */}
+      <section className="h-[100dvh] flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-accent/5 to-transparent" />
         <div className="relative z-10 text-center max-w-4xl">
           <motion.span 
             initial={{ opacity: 0 }}
@@ -66,7 +66,7 @@ export default function AboutPage() {
       </section>
 
       {/* Philosophy Section */}
-      <section className="h-screen flex items-center bg-black border-t border-white/5 overflow-hidden">
+      <section className="min-h-[100dvh] py-20 flex items-center bg-black border-t border-white/5 overflow-hidden">
         <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, x: -30 }}
@@ -107,7 +107,7 @@ export default function AboutPage() {
       </section>
 
       {/* History Section */}
-      <section className="h-screen flex flex-col justify-center bg-black border-t border-white/5 overflow-hidden">
+      <section className="min-h-[100dvh] py-20 flex flex-col justify-center bg-black border-t border-white/5 overflow-hidden">
         <div className="container-custom mx-auto px-6 md:px-12 mb-20">
           <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">Our Trajectory.</h2>
           <p className="text-white/40 font-medium">From localized security to global intelligence architecture.</p>
@@ -136,16 +136,16 @@ export default function AboutPage() {
       </section>
 
       {/* Final CTA */}
-      <section className="h-[60vh] flex flex-col items-center justify-center relative bg-black border-t border-white/5 overflow-hidden">
+      <section className="h-[60dvh] flex flex-col items-center justify-center relative bg-black border-t border-white/5 overflow-hidden">
         <div className="relative z-10 text-center px-6">
           <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-10">
             Join the <span className="text-white/20">Elite.</span>
           </h2>
           <Link href="/contact">
             <motion.button
-              whileHover={{ scale: 1.05 }}
+              whileHover={{ scale: 1.05, backgroundColor: "#8C6B4F", color: "#fff" }}
               whileTap={{ scale: 0.95 }}
-              className="px-10 py-4 bg-white text-black font-black rounded-full shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all"
+              className="px-10 py-4 bg-white text-black font-black rounded-full shadow-[0_0_40px_rgba(140,107,79,0.2)] transition-all"
             >
               Contact Intelligence Team
             </motion.button>

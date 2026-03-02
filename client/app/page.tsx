@@ -10,7 +10,7 @@ export default function HomePage() {
     <div className="flex flex-col bg-black text-white selection:bg-white/20">
       
       {/* 1. HERO SECTION */}
-      <section className="relative h-screen flex flex-col items-center justify-center overflow-hidden px-6">
+      <section className="relative h-[100dvh] min-h-[600px] flex flex-col items-center justify-center overflow-hidden px-6">
         {/* Subtle Background Animation */}
         <div className="absolute inset-0 z-0">
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[1000px] h-[1000px] bg-blue-600/5 rounded-full blur-[150px] animate-pulse" />
@@ -26,30 +26,31 @@ export default function HomePage() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
           >
-            <span className="text-[11px] font-bold tracking-[0.4em] uppercase text-white/40 mb-8 block font-mono">
+            <span className="text-[9px] md:text-[11px] font-bold tracking-[0.4em] uppercase text-accent-blue mb-6 md:mb-8 block font-mono">
               Secure. Intelligent. Precise.
             </span>
-            <h1 className="text-6xl md:text-8xl lg:text-9xl font-bold tracking-tight mb-10 leading-[0.95] text-white">
+            <h1 className="text-5xl md:text-8xl lg:text-9xl font-black tracking-tighter mb-8 md:mb-10 leading-[0.95] text-white font-sora">
               Safenetics <br />
               <span className="text-white/20">Intelligence.</span>
             </h1>
-            <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
+            <div className="w-24 h-1 bg-accent mx-auto mb-10 md:mb-12" />
+            <p className="text-base md:text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed mb-10 md:mb-12">
               The next generation of enterprise cybersecurity and neural-ready infrastructure. Built for scale, engineered for absolute precision.
             </p>
             
             <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-4">
               <Link href="/contact">
                 <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "#fff", color: "#000" }}
+                  whileHover={{ scale: 1.05, backgroundColor: "#8C6B4F", color: "#fff" }}
                   whileTap={{ scale: 0.95 }}
-                  className="px-10 py-5 bg-white text-black font-black rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-500 shadow-[0_0_30px_rgba(255,255,255,0.1)]"
+                  className="px-10 py-5 bg-white text-black font-black rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-500 shadow-[0_0_30px_rgba(140,107,79,0.1)]"
                 >
                   Enterprise Inquiry
                 </motion.button>
               </Link>
               <Link href="/technology">
                 <motion.button
-                  whileHover={{ scale: 1.05, backgroundColor: "rgba(255,255,255,0.05)" }}
+                  whileHover={{ scale: 1.05, backgroundColor: "rgba(140,107,79,0.1)", borderColor: "#8C6B4F" }}
                   whileTap={{ scale: 0.95 }}
                   className="px-10 py-5 bg-transparent border border-white/10 text-white font-black rounded-full text-[10px] uppercase tracking-[0.2em] transition-all duration-500"
                 >
@@ -73,29 +74,31 @@ export default function HomePage() {
       </section>
 
       {/* 2. VISION SECTION */}
-      <section className="relative h-screen flex items-center bg-black border-y border-white/5 overflow-hidden">
-        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6 md:px-12">
+      <section className="relative min-h-[100dvh] py-20 flex items-center bg-white border-t-[1px] border-accent/20 overflow-hidden">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-12 md:gap-20 items-center px-6 md:px-12">
           <motion.div
             initial={{ opacity: 0, x: -50 }}
             whileInView={{ opacity: 1, x: 0 }}
             transition={{ duration: 1 }}
             viewport={{ once: true }}
+            className="text-black"
           >
-            <h2 className="text-4xl md:text-6xl font-bold tracking-tight mb-8 leading-tight">
+            <span className="text-[10px] font-black uppercase tracking-[0.3em] text-accent mb-4 block">Secure Intelligence</span>
+            <h2 className="text-3xl md:text-6xl font-bold tracking-tight mb-6 md:mb-8 leading-tight">
               A commitment to <br />
-              <span className="text-white/30">unwavering security.</span>
+              <span className="text-black/30">unwavering security.</span>
             </h2>
-            <p className="text-lg text-white/40 leading-relaxed mb-10 max-w-lg">
+            <p className="text-base md:text-lg text-black/60 leading-relaxed mb-8 md:mb-10 max-w-lg font-medium">
               In an era of sophisticated threats, we provide the architectural foundation for absolute digital safety. Our approach combines neural intelligence with cryptographic excellence to safeguard your most critical assets.
             </p>
             <div className="grid grid-cols-2 gap-8">
               <div>
-                <div className="text-3xl font-bold mb-2">99.9%</div>
-                <div className="text-xs uppercase tracking-widest text-white/20 font-bold">Uptime Reliability</div>
+                <div className="text-3xl font-bold mb-2 text-black">99.9%</div>
+                <div className="text-xs uppercase tracking-widest text-black/20 font-bold">Uptime Reliability</div>
               </div>
               <div>
-                <div className="text-3xl font-bold mb-2">256-bit</div>
-                <div className="text-xs uppercase tracking-widest text-white/20 font-bold">Base Encryption</div>
+                <div className="text-3xl font-bold mb-2 text-black">256-bit</div>
+                <div className="text-xs uppercase tracking-widest text-black/20 font-bold">Base Encryption</div>
               </div>
             </div>
           </motion.div>
@@ -106,19 +109,20 @@ export default function HomePage() {
             viewport={{ once: true }}
             className="hidden lg:block aspect-square relative"
           >
-            <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent rounded-3xl border border-white/10" />
+            <div className="absolute inset-0 bg-gradient-to-br from-black/[0.02] to-transparent rounded-3xl border border-black/[0.05] shadow-2xl" />
             <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-3/4 h-3/4 flex items-center justify-center">
-              <Shield size={200} strokeWidth={0.5} className="text-white/5" />
+              <Shield size={200} strokeWidth={0.5} className="text-black/5" />
             </div>
           </motion.div>
         </div>
       </section>
 
       {/* 3. CORE SOLUTIONS */}
-      <section className="relative min-h-screen py-32 flex flex-col justify-center bg-black overflow-hidden px-6">
-        <div className="container-custom mx-auto px-6 md:px-12 text-center mb-20">
-          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">Core Infrastructure.</h2>
-          <p className="text-white/40 font-medium lowercase tracking-widest text-[10px]">Enterprise solutions for a neural-first world.</p>
+      <section className="relative min-h-[100dvh] py-20 md:py-32 flex flex-col justify-center bg-black overflow-hidden px-6">
+        <div className="container-custom mx-auto px-6 md:px-12 text-center mb-12 md:mb-20">
+          <h2 className="text-3xl md:text-6xl font-black tracking-tighter mb-4">Core Infrastructure.</h2>
+          <div className="w-12 h-0.5 bg-accent mx-auto mb-4" />
+          <p className="text-accent-blue font-medium lowercase tracking-widest text-[10px]">Enterprise solutions for a neural-first world.</p>
         </div>
 
         <div className="container-custom grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 px-6 md:px-12 mx-auto">
@@ -160,23 +164,27 @@ export default function HomePage() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: i * 0.1, duration: 0.8 }}
               viewport={{ once: true }}
-              className="group p-10 bg-white/[0.02] border border-white/5 rounded-3xl hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500"
+              className="group p-10 bg-white border border-transparent rounded-[32px] hover:border-accent hover:shadow-2xl transition-all duration-500 overflow-hidden relative"
             >
-              <div className="w-12 h-12 bg-white/5 rounded-xl flex items-center justify-center text-white/40 mb-8 group-hover:text-white group-hover:bg-white/10 transition-all">
+              <div className="w-12 h-12 bg-black/[0.03] rounded-xl flex items-center justify-center text-black/20 mb-8 group-hover:text-accent group-hover:bg-accent/5 transition-all">
                 {solution.icon}
               </div>
-              <h3 className="text-xl font-bold mb-4 tracking-tight">{solution.title}</h3>
-              <p className="text-white/30 text-sm leading-relaxed mb-8">
+              <h3 className="text-xl font-bold mb-4 tracking-tight text-black">{solution.title}</h3>
+              <p className="text-black/40 text-sm leading-relaxed mb-8">
                 {solution.desc}
               </p>
-              <div className="h-[1px] w-0 group-hover:w-full bg-white/20 transition-all duration-700" />
+              <div className="flex items-center gap-2">
+                <span className="text-[9px] font-black uppercase tracking-[0.2em] text-black/40 group-hover:text-accent transition-colors">Read Protocol</span>
+                <ArrowRight size={14} className="text-black/20 group-hover:text-accent transition-all group-hover:translate-x-1" />
+              </div>
+              <div className="absolute bottom-0 left-0 h-[2px] w-0 group-hover:w-full bg-accent transition-all duration-700" />
             </motion.div>
           ))}
         </div>
       </section>
 
       {/* 4. ENTERPRISE CTA */}
-      <section className="relative h-screen flex flex-col items-center justify-center bg-black overflow-hidden">
+      <section className="relative h-[100dvh] min-h-[500px] flex flex-col items-center justify-center bg-black overflow-hidden">
         {/* Subtle radial glow */}
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.03] rounded-full blur-[120px]" />
         
@@ -187,15 +195,15 @@ export default function HomePage() {
             transition={{ duration: 1.5 }}
             viewport={{ once: true }}
           >
-            <h2 className="text-6xl md:text-8xl font-bold tracking-tighter mb-12">
+            <h2 className="text-4xl md:text-8xl font-bold tracking-tighter mb-8 md:mb-12">
               Ready for the <br />
               <span className="text-white/20 transition-colors hover:text-white duration-1000 cursor-default">future?</span>
             </h2>
             <Link href="/contact">
               <motion.button
-                whileHover={{ scale: 1.05 }}
+                whileHover={{ scale: 1.05, backgroundColor: "#5C4033" }}
                 whileTap={{ scale: 0.95 }}
-                className="px-12 py-5 bg-white text-black font-black rounded-full text-lg shadow-[0_0_50px_rgba(255,255,255,0.2)] transition-all"
+                className="px-12 py-5 bg-[#8C6B4F] text-white font-black rounded-full text-lg shadow-[0_0_50px_rgba(140,107,79,0.2)] transition-all"
               >
                 Request Access
               </motion.button>

@@ -47,7 +47,7 @@ export default function FloatingChatbot() {
                 <div>
                   <div className="text-sm font-black tracking-tight">SAFENETICS AI</div>
                   <div className="text-[10px] uppercase tracking-widest font-bold opacity-60 flex items-center gap-1.5 mt-0.5">
-                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" /> Active Node
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent-blue animate-pulse" /> Active Node
                   </div>
                 </div>
               </div>
@@ -88,7 +88,7 @@ export default function FloatingChatbot() {
                     placeholder="Inquire about Neural, Quantum, Intelligence..." 
                     className="w-full bg-white/[0.04] border border-white/10 rounded-2xl pl-5 pr-14 py-4 text-xs font-medium text-white focus:outline-none focus:border-white/30 transition-all placeholder:text-white/20" 
                   />
-                  <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg">
+                  <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-accent text-white rounded-xl hover:bg-accent-dark active:scale-95 transition-all shadow-lg">
                     <Send size={16} />
                   </button>
                </div>
@@ -102,9 +102,9 @@ export default function FloatingChatbot() {
 
       <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        whileHover={{ scale: 1.1 }}
+        whileHover={{ scale: 1.1, backgroundColor: "#8C6B4F", color: "#fff" }}
         whileTap={{ scale: 0.9 }}
-        className="w-16 h-16 rounded-2xl bg-white text-black shadow-[0_10px_40px_rgba(255,255,255,0.2)] flex items-center justify-center transition-all group"
+        className="w-16 h-16 rounded-2xl bg-white text-black shadow-[0_10px_40px_rgba(140,107,79,0.3)] flex items-center justify-center transition-all group"
         aria-label="Toggle AI assistant"
       >
         {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
