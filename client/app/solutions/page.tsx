@@ -7,154 +7,131 @@ import {
   Brain, 
   Cloud, 
   Shield, 
-  Zap, 
   ArrowRight, 
-  BarChart3, 
-  Lock, 
+  Zap, 
   Cpu, 
-  Network 
+  Activity 
 } from "lucide-react";
-import Button from "@/components/Button";
-import SectionHeading from "@/components/SectionHeading";
 
 const solutions = [
   {
-    title: "AI & Cognitive Automation",
+    title: "Intelligence Mesh",
     slug: "ai-automation",
-    description: "Enterprise-grade machine learning models designed to automate complex decision-making and scale operational intelligence.",
+    description: "Enterprise-grade neural frameworks designed for autonomous decision-making and predictive operations.",
     icon: Brain,
-    color: "#6366f1", // indigo
-    features: ["Custom LLM Integration", "Predictive Logistics", "Automated Quality Control"],
+    features: ["Neural Core Alpha", "Predictive Analytics", "High-Velocity ML"],
   },
   {
-    title: "Global Cloud Infrastructure",
+    title: "Quantum Core",
     slug: "cloud-infrastructure",
-    description: "Planetary-scale cloud architecture that ensures 99.999% availability with automated edge deployment and healing.",
+    description: "Planetary-scale infrastructure optimized for deterministic reliability and extreme computational load.",
     icon: Cloud,
-    color: "#06b6d4", // cyan
-    features: ["Multi-Cloud Strategy", "Serverless Optimization", "Edge Content Delivery"],
+    features: ["Global Edge Mesh", "Zero-Latency Routing", "Auto-Healing Nodes"],
   },
   {
-    title: "Cybersecurity Architecture",
+    title: "Zero-Trust Protocol",
     slug: "cybersecurity",
-    description: "Zero-trust security frameworks built into the DNA of your infrastructure, protecting against advanced persistent threats.",
+    description: "Immutable security frameworks engineered into the DNA of every infrastructure layer.",
     icon: Shield,
-    color: "#10b981", // green
-    features: ["Zero-Trust Identity", "Real-time Threat Hunting", "Compliance Automation"],
+    features: ["Neural Cryptography", "Active Threat Mitigation", "Geometric Verification"],
   },
 ];
 
 const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, delay, ease: "easeOut" as any },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] as any },
 });
 
 export default function SolutionsPage() {
   return (
-    <div className="flex flex-col">
-      {/* ── Hero ────────────────────────────────── */}
-      <section className="pt-24 pb-20 md:pt-32 md:pb-28 relative overflow-hidden">
-        <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-primary/5 to-transparent pointer-events-none" />
-        <div className="container-custom relative z-10">
-          <div className="max-w-3xl">
-            <motion.span {...fadeUp(0)} className="badge mb-5 inline-flex">Enterprise Solutions</motion.span>
-            <motion.h1 {...fadeUp(0.1)} className="heading-hero mb-6">
-              Engineered for <br />
-              <span className="text-primary">Infinite Scalability</span>.
-            </motion.h1>
-            <motion.p {...fadeUp(0.2)} className="body-lg max-w-xl mb-10">
-              We don't just build software; we architect the digital backbone of modern enterprises. 
-              Deploy robust, secure, and AI-driven solutions that grow with your vision.
-            </motion.p>
-          </div>
-        </div>
-      </section>
-
-      {/* ── Solutions Grid ──────────────────────── */}
-      <section className="py-20 md:py-32 bg-surface-elevated">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
-            {solutions.map((sol, i) => {
-              const Icon = sol.icon;
-              return (
-                <motion.div
-                  key={sol.slug}
-                  {...fadeUp(i * 0.1)}
-                  className="glass-card group p-8 md:p-10 flex flex-col h-full"
-                >
-                  <div 
-                    className="w-16 h-16 rounded-2xl flex items-center justify-center mb-8 transition-transform duration-500 group-hover:rotate-12"
-                    style={{ backgroundColor: `${sol.color}15`, color: sol.color }}
-                  >
-                    <Icon size={32} />
-                  </div>
-                  
-                  <h3 className="text-2xl font-bold mb-4 tracking-tight" style={{ color: "var(--color-text-primary)" }}>
-                    {sol.title}
-                  </h3>
-                  
-                  <p className="body-md mb-8 flex-grow">
-                    {sol.description}
-                  </p>
-                  
-                  <ul className="space-y-4 mb-10">
-                    {sol.features.map((feat) => (
-                      <li key={feat} className="flex items-center gap-3 text-sm font-medium" style={{ color: "var(--color-text-secondary)" }}>
-                        <div className="w-1.5 h-1.5 rounded-full bg-primary" />
-                        {feat}
-                      </li>
-                    ))}
-                  </ul>
-                  
-                  <Link href={`/solutions/${sol.slug}`}>
-                    <Button variant="outline" className="w-full justify-between group/btn">
-                      Explore Solution
-                      <ArrowRight size={18} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-                    </Button>
-                  </Link>
-                </motion.div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ── Trust Section ───────────────────────── */}
-      <section className="py-20 md:py-32">
-        <div className="container-custom text-center">
-          <motion.div {...fadeUp(0)} className="mb-16">
-            <h2 className="heading-section mb-6">Built for Global Standards</h2>
-            <p className="body-lg max-w-2xl mx-auto">
-              Our solutions comply with rigorous enterprise security standards, including SOC2, GDPR, and ISO 27001, 
-              ensuring your data is always protected.
-            </p>
+    <div className="flex flex-col bg-black text-white px-6">
+      
+      {/* Hero Section - 100vh */}
+      <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.03] to-transparent pointer-events-none" />
+        <div className="relative z-10 text-center max-w-5xl">
+          <motion.span {...fadeUp(0)} className="text-[11px] font-bold tracking-[0.4em] uppercase text-white/40 mb-8 block font-mono">
+            Enterprise Solutions
+          </motion.span>
+          <motion.h1 {...fadeUp(0.05)} className="text-5xl md:text-7xl lg:text-9xl font-black tracking-tighter mb-10 leading-[0.95]">
+            Engineered for <br />
+            <span className="text-white/20">The Infinite Enterprise.</span>
+          </motion.h1>
+          <motion.p {...fadeUp(0.1)} className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
+            We architect the digital backbone of industrial leaders. Robust, secure, and neural-ready.
+          </motion.p>
+          
+          <motion.div {...fadeUp(0.15)} className="flex justify-center">
+            <Link href="/contact">
+              <button className="px-10 py-5 bg-white text-black font-black rounded-full text-sm uppercase tracking-tighter shadow-lg hover:scale-105 active:scale-95 transition-all">
+                Request Architecture Consultation
+              </button>
+            </Link>
           </motion.div>
+        </div>
+      </section>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-8 opacity-50">
-            {/* Placeholder for Trust Logos */}
-            {["Security First", "Global Scale", "High Uptime", "24/7 Support"].map((text) => (
-              <div key={text} className="p-8 border border-border rounded-xl font-bold uppercase tracking-widest text-xs">
-                {text}
-              </div>
+      {/* Grid Section - 100vh compatible */}
+      <section className="min-h-screen py-32 flex flex-col justify-center border-y border-white/5">
+        <div className="container-custom mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            {solutions.map((sol, i) => (
+              <motion.div
+                key={sol.slug}
+                {...fadeUp(i * 0.1)}
+                className="bg-white/[0.02] border border-white/5 rounded-[40px] p-10 group hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 flex flex-col h-full"
+              >
+                <div className="w-16 h-16 rounded-[20px] bg-white/5 flex items-center justify-center text-white/30 mb-10 group-hover:bg-white group-hover:text-black transition-all duration-500">
+                  <sol.icon size={32} strokeWidth={1.5} />
+                </div>
+                
+                <h3 className="text-2xl font-black mb-6 tracking-tight">{sol.title}</h3>
+                <p className="text-white/40 text-sm leading-relaxed mb-8 flex-grow">
+                  {sol.description}
+                </p>
+                
+                <ul className="space-y-4 mb-12">
+                  {sol.features.map((feat) => (
+                    <li key={feat} className="flex items-center gap-3 text-[11px] font-bold text-white/20 uppercase tracking-widest">
+                      <div className="w-1 h-1 rounded-full bg-white/20" />
+                      {feat}
+                    </li>
+                  ))}
+                </ul>
+                
+                <Link href={`/solutions/${sol.slug}`} className="mt-auto">
+                  <button className="flex items-center gap-2 text-[10px] font-black uppercase tracking-[0.2em] text-white/60 group-hover:text-white transition-colors">
+                    Access Solution Protocol <ArrowRight size={14} />
+                  </button>
+                </Link>
+              </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* ── Footer CTA ──────────────────────────── */}
-      <section className="py-20 md:py-32 bg-primary text-white">
-        <div className="container-custom text-center">
-          <h2 className="heading-section text-white mb-8">Ready to Transform Your Infrastructure?</h2>
-          <Link href="/contact">
-            <Button variant="secondary" size="lg">
-              Schedule an Architect Call
-              <ArrowRight size={20} />
-            </Button>
-          </Link>
-        </div>
+      {/* Trust/Capabilities */}
+      <section className="h-screen flex flex-col justify-center items-center text-center relative overflow-hidden px-6">
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-white/[0.02] rounded-full blur-[150px] pointer-events-none" />
+        
+        <motion.div {...fadeUp(0)} className="max-w-3xl relative z-10">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">Global Compliance. <br /> <span className="text-white/20">Industrial Standards.</span></h2>
+          <p className="text-white/40 font-medium text-lg leading-relaxed mb-16">
+            Our architecture adheres to the world's most rigorous verification standards, including SOC2 Type II, ISO 27001, and NIST Cybersecurity Framework.
+          </p>
+          
+          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
+            {["Security Core", "Planetary Scale", "Neural Ready", "Absolute Uptime"].map((text) => (
+              <div key={text} className="px-6 py-6 border border-white/10 rounded-2xl bg-white/[0.01] flex flex-col items-center justify-center gap-2 group hover:border-white/30 transition-all">
+                <span className="text-[9px] font-black uppercase tracking-[0.3em] text-white/20 group-hover:text-white/60 transition-colors">{text}</span>
+              </div>
+            ))}
+          </div>
+        </motion.div>
       </section>
+
     </div>
   );
 }

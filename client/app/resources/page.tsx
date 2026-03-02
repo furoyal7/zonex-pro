@@ -6,138 +6,118 @@ import { motion } from "framer-motion";
 import { 
   BookOpen, 
   FileText, 
-  Video, 
   ArrowRight, 
   Search,
   Calendar,
-  Clock,
-  User
+  User,
+  Shield,
+  Activity
 } from "lucide-react";
-import Button from "@/components/Button";
 
 const resources = [
   {
     type: "Guide",
-    title: "The Zero-Trust Blueprint",
-    description: "A comprehensive guide to architecting identity-first security in cloud-native environments.",
-    author: "Zonex-Pro Engineering",
-    date: "Feb 14, 2026",
-    image: "bg-emerald-500/5",
-    icon: FileText,
+    title: "Zero-Trust Mesh Architecture",
+    description: "Architecting decentralized security nodes for the global enterprise footprint.",
+    author: "Safenetics Architecture",
+    date: "March 02, 2026",
+    icon: Shield,
+  },
+  {
+    type: "Intelligence",
+    title: "Neural Threat Mitigation",
+    description: "Implementing autonomous reactive defenses in critical industrial infrastructure.",
+    author: "Intelligence Dept",
+    date: "Feb 24, 2026",
+    icon: Activity,
   },
   {
     type: "Whitepaper",
-    title: "AI Optimization for Logistics",
-    description: "How deterministic AI models are reducing supply chain costs by up to 22%.",
-    author: "Research Team",
-    date: "Feb 10, 2026",
-    image: "bg-indigo-500/5",
-    icon: BookOpen,
-  },
-  {
-    type: "Engineering",
-    title: "Scaling to 100M+ Users",
-    description: "Lessons learned from building the EcoScale serverless edge architecture.",
-    author: "SRE Dept",
-    date: "Feb 05, 2026",
-    image: "bg-cyan-500/5",
-    icon: Video,
+    title: "The Quantum Security Core",
+    description: "Deterministic encryption standards for the next generation of financial networks.",
+    author: "Safenetics Research",
+    date: "Feb 15, 2026",
+    icon: FileText,
   },
 ];
 
 const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 20 },
   whileInView: { opacity: 1, y: 0 },
-  viewport: { once: true, margin: "-60px" },
-  transition: { duration: 0.5, delay, ease: "easeOut" as any },
+  viewport: { once: true, margin: "-100px" },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] as any },
 });
 
 export default function ResourceHubPage() {
   return (
-    <div className="flex flex-col">
-      {/* ── Hero ────────────────────────────────── */}
-      <section className="pt-24 pb-16 md:pt-32 md:pb-24">
-        <div className="container-custom">
-          <div className="flex flex-col md:flex-row md:items-end justify-between gap-8 mb-12">
-            <div className="max-w-2xl">
-              <motion.span {...fadeUp(0)} className="badge mb-5 inline-flex">Engineering Library</motion.span>
-              <motion.h1 {...fadeUp(0.05)} className="heading-hero mb-6">
-                Technical <br />
-                <span className="text-primary">Resource Hub</span>
+    <div className="flex flex-col bg-black text-white px-6">
+      {/* Hero Section */}
+      <section className="h-[70vh] flex flex-col justify-center border-b border-white/5 relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-br from-white/[0.03] to-transparent pointer-events-none" />
+        <div className="container-custom mx-auto px-6 md:px-12">
+          <div className="flex flex-col md:flex-row md:items-end justify-between gap-12">
+            <div className="max-w-3xl">
+              <motion.span {...fadeUp(0)} className="text-[10px] font-black uppercase tracking-[0.4em] text-white/30 mb-8 block">Intelligence Hub</motion.span>
+              <motion.h1 {...fadeUp(0.05)} className="text-5xl md:text-7xl font-bold tracking-tighter mb-8 leading-[0.95]">
+                Engineering <br />
+                <span className="text-white/20">Resources.</span>
               </motion.h1>
-              <motion.p {...fadeUp(0.1)} className="body-lg">
-                Stay ahead of the curve with engineering-first insights, architectural whitepapers, 
-                and implementation guides from the team at Zonex-Pro.
+              <motion.p {...fadeUp(0.1)} className="text-lg text-white/40 max-w-xl font-medium leading-relaxed">
+                Technical briefings, architectural whitepapers, and operational guides from the Safenetics Intelligence Mesh.
               </motion.p>
             </div>
             
             <motion.div {...fadeUp(0.15)} className="w-full md:w-auto">
-              <div className="relative">
-                <Search className="absolute left-4 top-1/2 -translate-y-1/2 text-text-muted" size={18} />
+              <div className="relative group">
+                <Search className="absolute left-6 top-1/2 -translate-y-1/2 text-white/20 group-focus-within:text-white transition-colors" size={20} />
                 <input 
                   type="text" 
-                  placeholder="Search resources..." 
-                  className="w-full md:w-[300px] pl-12 pr-4 py-3 bg-surface border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                  placeholder="Query resources..." 
+                  className="w-full md:w-[350px] pl-16 pr-6 py-5 bg-white/[0.02] border border-white/10 rounded-2xl focus:outline-none focus:border-white/30 transition-all font-medium text-sm placeholder:text-white/20" 
                 />
               </div>
             </motion.div>
           </div>
-
-          <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-             {["All Resources", "Engineering", "Whitepapers", "Guides", "Case Studies"].map((cat, i) => (
-               <motion.button 
-                 key={cat} 
-                 {...fadeUp(0.1 + i * 0.05)}
-                 className={`px-6 py-2 rounded-full text-sm font-bold whitespace-nowrap transition-all ${
-                   i === 0 ? "bg-primary text-white" : "bg-surface border border-border text-text-primary hover:border-primary/50"
-                 }`}
-               >
-                 {cat}
-               </motion.button>
-             ))}
-          </div>
         </div>
       </section>
 
-      {/* ── Featured Posts ─────────────────────── */}
-      <section className="py-16 md:py-24 bg-surface-elevated">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      {/* Grid Section */}
+      <section className="py-32 bg-black overflow-hidden">
+        <div className="container-custom mx-auto px-6 md:px-12">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
             {resources.map((res, i) => {
               const Icon = res.icon;
               return (
                 <motion.div
                   key={res.title}
                   {...fadeUp(i * 0.1)}
-                  className="bg-surface rounded-3xl border border-border overflow-hidden group hover:border-primary/30 transition-all duration-300 shadow-sm hover:shadow-xl"
+                  className="bg-white/[0.02] rounded-[32px] border border-white/5 overflow-hidden group hover:bg-white/[0.04] hover:border-white/10 transition-all duration-500 flex flex-col h-full"
                 >
-                  <div className={`aspect-video ${res.image} flex items-center justify-center relative overflow-hidden`}>
-                    <Icon size={48} className="text-primary opacity-50 group-hover:scale-110 transition-transform duration-500" />
-                    <div className="absolute top-4 left-4">
-                       <span className="px-3 py-1 bg-surface-elevated border border-border/50 rounded-full text-[10px] font-bold text-text-primary uppercase tracking-wider shadow-sm">
-                         {res.type}
-                       </span>
-                    </div>
-                  </div>
-                  
-                  <div className="p-8">
-                    <div className="flex gap-4 text-[10px] text-text-muted font-medium mb-4 uppercase tracking-widest">
-                       <div className="flex items-center gap-1"><Calendar size={12} /> {res.date}</div>
-                       <div className="flex items-center gap-1"><User size={12} /> {res.author}</div>
+                  <div className="p-10 flex flex-col flex-grow">
+                    <div className="flex items-center gap-4 mb-10">
+                      <div className="w-14 h-14 rounded-2xl bg-white/5 border border-white/5 flex items-center justify-center text-white/30 group-hover:text-white group-hover:bg-white/10 transition-all duration-500">
+                        <Icon size={28} strokeWidth={1.5} />
+                      </div>
+                      <div className="text-[10px] font-black uppercase tracking-[0.2em] text-white/20">{res.type}</div>
                     </div>
                     
-                    <h3 className="text-xl font-bold mb-4 tracking-tight group-hover:text-primary transition-colors">
+                    <h3 className="text-2xl font-bold mb-6 tracking-tight leading-tight group-hover:text-white transition-colors">
                       {res.title}
                     </h3>
                     
-                    <p className="text-sm text-text-secondary line-clamp-2 mb-6 leading-relaxed">
+                    <p className="text-[15px] text-white/40 font-medium leading-[1.6] mb-12 flex-grow">
                       {res.description}
                     </p>
                     
-                    <Button variant="outline" className="w-full justify-between items-center group/btn">
-                      Read More
-                      <ArrowRight size={16} className="transition-transform duration-300 group-hover/btn:translate-x-1" />
-                    </Button>
+                    <div className="pt-8 border-t border-white/5 flex items-center justify-between group/footer">
+                       <div className="flex flex-col">
+                         <span className="text-[10px] uppercase font-bold tracking-widest text-white/20 mb-1">Author</span>
+                         <span className="text-[11px] font-bold text-white/60">{res.author}</span>
+                       </div>
+                       <div className="w-10 h-10 rounded-full border border-white/5 flex items-center justify-center text-white/20 group-hover/footer:bg-white group-hover/footer:text-black transition-all">
+                         <ArrowRight size={18} />
+                       </div>
+                    </div>
                   </div>
                 </motion.div>
               );
@@ -146,28 +126,24 @@ export default function ResourceHubPage() {
         </div>
       </section>
 
-      {/* ── Newsletter ─────────────────────────── */}
-      <section className="py-20 md:py-32">
-        <div className="container-custom">
-          <motion.div 
-             {...fadeUp(0)}
-             className="bg-primary/5 border border-primary/10 rounded-3xl p-8 md:p-16 flex flex-col md:flex-row items-center gap-12"
-          >
-             <div className="flex-grow text-center md:text-left">
-                <h2 className="text-2xl md:text-3xl font-bold mb-4">Zonex Briefings</h2>
-                <p className="body-md">Get technical deep-dives and enterprise infrastructure updates delivered directly to your inbox. Once a month. Zero spam.</p>
-             </div>
-             
-             <div className="w-full md:w-auto flex flex-col sm:flex-row gap-4">
-                <input 
-                  type="email" 
-                  placeholder="Enter your email" 
-                  className="px-6 py-3 bg-surface border border-border rounded-xl focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all w-full sm:w-[300px]"
-                />
-                <Button variant="primary">Subscribe</Button>
-             </div>
-          </motion.div>
-        </div>
+      {/* Subscription Section */}
+      <section className="h-[50vh] flex flex-col items-center justify-center border-t border-white/5 bg-black">
+        <motion.div 
+           {...fadeUp(0)}
+           className="text-center max-w-2xl"
+        >
+           <h2 className="text-3xl md:text-5xl font-bold tracking-tighter mb-8">Intelligence Briefing.</h2>
+           <p className="text-white/30 font-medium mb-12">Architectural insights and operational security updates. Precise and essential. Delivered monthly.</p>
+           
+           <div className="flex flex-col sm:flex-row gap-4 items-center justify-center">
+              <input 
+                type="email" 
+                placeholder="Secure Email Address" 
+                className="px-8 py-5 bg-white/[0.02] border border-white/10 rounded-full focus:outline-none focus:border-white/30 transition-all w-full sm:w-[320px] text-sm font-medium" 
+              />
+              <button className="px-10 py-5 bg-white text-black font-black rounded-full text-sm uppercase tracking-tighter whitespace-nowrap hover:scale-105 active:scale-95 transition-all">Submit Access</button>
+           </div>
+        </motion.div>
       </section>
     </div>
   );

@@ -20,30 +20,30 @@ const outfit = Outfit({
 });
 
 export const metadata: Metadata = {
-  title: "ZONEX-PRO | Professional Business Solutions & Tech Innovation",
+  title: "Safenetics | Enterprise Cybersecurity & AI Innovation",
   description:
-    "ZONEX-PRO delivers cutting-edge technology solutions and business innovation. We transform ideas into professional reality through expertise and precision.",
+    "Secure. Intelligent. Precise. Safenetics provides enterprise-grade cybersecurity and AI solutions for industry leaders.",
   keywords: [
-    "tech innovation",
-    "business solutions",
-    "software development",
-    "digital transformation",
-    "ZONEX-PRO",
+    "cybersecurity",
+    "AI innovation",
+    "enterprise security",
+    "advanced analytics",
+    "Safenetics",
   ],
-  authors: [{ name: "ZONEX-PRO Team" }],
+  authors: [{ name: "Safenetics Team" }],
   openGraph: {
-    title: "ZONEX-PRO | Professional Business Solutions & Tech Innovation",
+    title: "Safenetics | Enterprise Cybersecurity & AI Innovation",
     description:
-      "We transform ideas into professional reality through expertise and precision.",
+      "Secure. Intelligent. Precise. Future-ready technology for the modern enterprise.",
     type: "website",
     locale: "en_US",
-    siteName: "ZONEX-PRO",
+    siteName: "Safenetics",
   },
   twitter: {
     card: "summary_large_image",
-    title: "ZONEX-PRO | Professional Business Solutions & Tech Innovation",
+    title: "Safenetics | Enterprise Cybersecurity & AI Innovation",
     description:
-      "We transform ideas into professional reality through expertise and precision.",
+      "Secure. Intelligent. Precise. Future-ready technology for the modern enterprise.",
   },
 };
 

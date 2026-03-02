@@ -183,9 +183,9 @@ export default function ProjectsPage() {
       <section className="py-16 md:py-20">
         <div className="container-custom">
           <AnimatedSection>
-            <div className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 rounded-3xl p-10 sm:p-14 md:p-20 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
+            <div className="bg-black border border-white/10 rounded-3xl p-10 sm:p-14 md:p-20 text-center text-white relative overflow-hidden">
+              <div className="absolute top-0 right-0 w-64 h-64 bg-indigo-500/5 rounded-full -translate-y-1/2 translate-x-1/2" />
+              <div className="absolute bottom-0 left-0 w-48 h-48 bg-indigo-500/5 rounded-full translate-y-1/2 -translate-x-1/2" />
               <h2
                 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 relative z-10"
                 style={{ fontFamily: "var(--font-outfit)" }}

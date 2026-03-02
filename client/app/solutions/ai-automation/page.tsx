@@ -5,149 +5,145 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
   Brain, 
-  Cpu, 
-  Database, 
-  Zap, 
   ArrowLeft, 
-  CheckCircle2, 
-  BarChart, 
-  Box
+  Cpu, 
+  Zap, 
+  Activity,
+  Box,
+  Database,
+  ArrowRight
 } from "lucide-react";
-import Button from "@/components/Button";
 
 const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay, ease: "easeOut" as any },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] as any },
 });
 
 export default function AISolutionPage() {
   return (
-    <div className="flex flex-col">
-      {/* ── Navigation ────────────────────────── */}
-      <nav className="pt-24 pb-6 bg-background/50 backdrop-blur-md sticky top-0 z-20">
-        <div className="container-custom flex items-center justify-between">
-          <Link href="/solutions" className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-primary transition-colors">
-            <ArrowLeft size={16} />
-            Back to Solutions
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="#features" className="text-sm font-medium hover:text-primary">Features</Link>
-            <Link href="#metrics" className="text-sm font-medium hover:text-primary">Metrics</Link>
-            <Link href="#get-started" className="text-sm font-medium hover:text-primary">Get Started</Link>
-          </div>
-        </div>
+    <div className="flex flex-col bg-black text-white px-6">
+      
+      {/* Minimal Nav */}
+      <nav className="fixed top-24 left-1/2 -translate-x-1/2 z-40">
+        <Link href="/solutions" className="flex items-center gap-3 px-6 py-2 bg-white/[0.05] border border-white/10 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white/60 hover:text-white hover:bg-white/10 transition-all backdrop-blur-md">
+          <ArrowLeft size={14} /> Back to Solutions
+        </Link>
       </nav>
 
-      {/* ── Hero section ──────────────────────── */}
-      <section className="py-20 md:py-28 overflow-hidden">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp(0)}>
-              <div className="w-16 h-16 rounded-2xl bg-primary/10 text-primary flex items-center justify-center mb-8">
-                <Brain size={32} />
-              </div>
-              <h1 className="heading-hero mb-6 text-text-primary">
-                AI & Cognitive <br />
-                <span className="text-primary">Automation</span>
-              </h1>
-              <p className="body-lg mb-10 max-w-xl">
-                Replace manual bottlenecks with autonomous intelligence. Our AI solutions integrate 
-                directly into your existing workflows to optimize resource allocation, predict maintenance, 
-                and enhance customer experiences at scale.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/contact">
-                  <Button variant="primary" size="lg">Consult an AI Expert</Button>
-                </Link>
-                <Link href="#features">
-                  <Button variant="outline" size="lg">See Capabilities</Button>
-                </Link>
-              </div>
-            </motion.div>
+      {/* Hero Section - 100vh */}
+      <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent pointer-events-none" />
+        <div className="relative z-10 text-center max-w-5xl">
+          <motion.div {...fadeUp(0)}>
+            <div className="w-20 h-20 rounded-[24px] bg-white/5 flex items-center justify-center mb-10 mx-auto text-white/30">
+              <Brain size={40} strokeWidth={1} />
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-10 leading-[0.95]">
+              Intelligence <br />
+              <span className="text-white/20">Mesh Architecture.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
+              Deep-integrated neural models for autonomous enterprise decision workflows. Scalable, secure, and private.
+            </p>
+            <Link href="/contact">
+              <button className="px-10 py-5 bg-white text-black font-black rounded-full text-sm uppercase tracking-tighter shadow-xl">Deploy Intelligence</button>
+            </Link>
+          </motion.div>
+        </div>
+      </section>
 
-            <motion.div 
-              {...fadeUp(0.2)}
-              className="relative aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-border bg-surface-elevated group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-tr from-primary/10 via-transparent to-accent/10" />
-              <div className="absolute inset-0 flex items-center justify-center">
-                <div className="w-full h-full p-8 md:p-12 flex flex-col gap-6">
-                   {/* Abstract Dashboard UI Skeleton */}
-                   <div className="h-8 w-1/3 bg-primary/20 rounded-lg animate-pulse" />
-                   <div className="flex gap-4 h-32">
-                      <div className="flex-1 bg-surface rounded-2xl border border-border p-4 shadow-sm">
-                         <BarChart className="text-primary mb-2" size={24} />
-                         <div className="h-2 w-full bg-border rounded mt-2" />
-                         <div className="h-2 w-2/3 bg-border rounded mt-1" />
-                      </div>
-                      <div className="flex-1 bg-surface rounded-2xl border border-border p-4 shadow-sm">
-                         <Zap className="text-accent mb-2" size={24} />
-                         <div className="h-2 w-full bg-border rounded mt-2" />
-                         <div className="h-2 w-1/2 bg-border rounded mt-1" />
-                      </div>
-                   </div>
-                   <div className="flex-grow bg-surface rounded-2xl border border-border p-6 shadow-sm overflow-hidden">
-                      <div className="flex justify-between mb-4">
-                        <div className="h-4 w-1/4 bg-border rounded" />
-                        <div className="h-4 w-1/6 bg-primary/10 rounded" />
-                      </div>
-                      <div className="space-y-3">
-                         {[1,2,3].map(i => (
-                           <div key={i} className="flex gap-3 items-center">
-                              <div className="w-8 h-8 rounded bg-primary/5 flex items-center justify-center"><Box size={14} className="text-primary/50" /></div>
-                              <div className="flex-grow h-2 bg-border/50 rounded" />
-                              <div className="w-12 h-2 bg-green-500/20 rounded" />
-                           </div>
-                         ))}
-                      </div>
-                   </div>
+      {/* Technical Grid - 100vh */}
+      <section className="h-screen flex items-center bg-black border-y border-white/5 relative overflow-hidden">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6 md:px-12 mx-auto">
+          {/* Visual UI/Skeleton representation */}
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            className="hidden lg:flex flex-col gap-6"
+          >
+            <div className="p-10 bg-white/[0.02] border border-white/5 rounded-[40px] flex flex-col gap-8 shadow-2xl">
+              <div className="flex justify-between items-center mb-4">
+                 <div className="h-4 w-1/3 bg-white/10 rounded-full animate-pulse" />
+                 <div className="h-4 w-12 bg-white/5 rounded-full" />
+              </div>
+              <div className="grid grid-cols-2 gap-6">
+                <div className="h-24 bg-white/[0.03] border border-white/5 rounded-2xl p-4 flex flex-col justify-between">
+                   <Activity size={16} className="text-white/20" />
+                   <div className="h-1.5 w-full bg-white/5 rounded" />
+                </div>
+                <div className="h-24 bg-white/[0.03] border border-white/5 rounded-2xl p-4 flex flex-col justify-between">
+                   <Zap size={16} className="text-white/20" />
+                   <div className="h-1.5 w-2/3 bg-white/5 rounded" />
                 </div>
               </div>
-            </motion.div>
-          </div>
+              <div className="h-32 bg-white/[0.03] border border-white/10 rounded-2xl p-6 flex flex-col gap-4">
+                  <div className="flex gap-2 items-center">
+                    <div className="w-2 h-2 rounded-full bg-white/40" />
+                    <div className="h-2 w-1/2 bg-white/5 rounded" />
+                  </div>
+                  <div className="flex gap-2 items-center">
+                    <div className="w-2 h-2 rounded-full bg-white/20" />
+                    <div className="h-2 w-3/4 bg-white/5 rounded" />
+                  </div>
+              </div>
+            </div>
+          </motion.div>
+          
+          <motion.div {...fadeUp(0)}>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">Deterministic <br /> <span className="text-white/20">Decision Logic.</span></h2>
+            <p className="text-lg text-white/40 leading-relaxed mb-12 max-w-md font-medium">
+              We eliminate the hallucinations of traditional LLMs by implementing deterministic constraints and private data silos, ensuring your AI acts with the precision of an engineer.
+            </p>
+            <div className="space-y-8">
+              {[
+                { title: "Predictive Analytics", icon: Database, desc: "Forecast demand with 98% accuracy." },
+                { title: "LLM Orchestration", icon: Brain, desc: "Secure, private execution of complex logic." },
+                { title: "Autonomous Ops", icon: Cpu, desc: "Self-healing system monitoring." },
+                { title: "Neural Vision", icon: Box, desc: "High-speed industrial visual recognition." },
+              ].map((item, i) => (
+                <div key={item.title} className="flex gap-6 items-center group">
+                  <div className="w-12 h-12 rounded-2xl bg-white/5 flex items-center justify-center text-white/20 group-hover:bg-white group-hover:text-black transition-all">
+                    <item.icon size={20} />
+                  </div>
+                  <div>
+                    <h3 className="text-[13px] font-black uppercase tracking-widest mb-1">{item.title}</h3>
+                    <p className="text-xs text-white/30 font-medium">{item.desc}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* ── Capabilities ──────────────────────── */}
-      <section id="features" className="py-20 md:py-32 bg-surface-elevated">
-        <div className="container-custom">
-          <div className="text-center mb-16">
-            <h2 className="heading-section mb-6">Built for High-Level Ops</h2>
-            <p className="body-lg max-w-2xl mx-auto">
-              Our cognitive frameworks go beyond simple chatbots, offering deep integration into core enterprise logic.
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      {/* Performance Section */}
+      <section className="h-screen flex flex-col items-center justify-center bg-black relative overflow-hidden">
+        <div className="relative z-10 text-center max-w-4xl px-6">
+          <h2 className="text-5xl md:text-7xl font-bold tracking-tighter mb-12 leading-tight">Elite Efficiency. <br /> <span className="text-white/20">Autonomous Growth.</span></h2>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
-              { title: "Predictive Analytics", icon: Database, desc: "Forecast demand with 98% accuracy using historical data patterns." },
-              { title: "LLM Orchestration", icon: Zap, desc: "Private, secure language models trained on your specific documentation." },
-              { title: "Autonomous Ops", icon: Cpu, desc: "Self-healing infrastructure that predicts and prevents downtime." },
-              { title: "Computer Vision", icon: Box, desc: "High-speed visual recognition for industrial quality control." },
-            ].map((item, i) => (
-              <motion.div key={item.title} {...fadeUp(i * 0.1)} className="bg-surface p-8 rounded-2xl border border-border shadow-sm">
-                <item.icon className="text-primary mb-5" size={28} />
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                <p className="text-sm text-text-secondary leading-relaxed">{item.desc}</p>
-              </motion.div>
+               { val: "220%", label: "Throughput Increase" },
+               { val: "4-6wk", label: "Implementation Hub" },
+               { val: "98.4%", label: "Decision Accuracy" },
+            ].map(stat => (
+              <div key={stat.label} className="p-10 bg-white/[0.02] border border-white/5 rounded-[32px] hover:bg-white/[0.04] transition-all">
+                <div className="text-4xl font-black mb-2 tracking-tighter">{stat.val}</div>
+                <div className="text-[9px] font-black uppercase tracking-[0.3em] text-white/20">{stat.label}</div>
+              </div>
             ))}
           </div>
+          
+          <Link href="/contact" className="mt-20 block">
+            <button className="flex items-center gap-3 bg-white text-black px-12 py-5 rounded-full font-black text-sm uppercase tracking-tighter mx-auto shadow-2xl">
+              Initiate Project Hub <ArrowRight size={20} />
+            </button>
+          </Link>
         </div>
       </section>
 
-      {/* ── CTA ────────────────────────────────── */}
-      <section id="get-started" className="py-20 md:py-32 bg-background">
-        <div className="container-custom text-center">
-          <h2 className="heading-section mb-8">Deploy Your Competitive Advantage Today</h2>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-             <Link href="/contact">
-                <Button variant="primary" size="lg">Talk to an Architect</Button>
-             </Link>
-             <p className="text-sm font-medium text-text-secondary">Average implementation time: 4-6 weeks</p>
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

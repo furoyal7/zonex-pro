@@ -377,7 +377,7 @@ export default function ServicesPage() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.5, ease: [0.25, 0.4, 0.25, 1] }}
-            className="bg-gradient-to-br from-indigo-600 to-indigo-700 rounded-3xl px-8 py-14 sm:px-14 sm:py-16 md:px-20 md:py-20 text-center text-white relative overflow-hidden"
+            className="bg-black border border-white/10 rounded-3xl px-8 py-14 sm:px-14 sm:py-16 md:px-20 md:py-20 text-center text-white relative overflow-hidden"
           >
             {/* Soft decorative circle */}
             <div className="absolute top-0 right-0 w-64 h-64 bg-white/[0.04] rounded-full -translate-y-1/3 translate-x-1/3 pointer-events-none" />

@@ -7,7 +7,7 @@ import { MessageSquare, X, Send, Bot, Sparkles } from "lucide-react";
 export default function FloatingChatbot() {
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState([
-    { role: "bot", text: "Hello! I'm the Zonex-Pro AI assistant. How can I help you explore our enterprise solutions today?" }
+    { role: "bot", text: "Protocol initiated. I am the Safenetics Intelligence Assistant. How can I assist with your infrastructure requirements today?" }
   ]);
   const [input, setInput] = useState("");
 
@@ -19,54 +19,58 @@ export default function FloatingChatbot() {
     setMessages(prev => [...prev, userMsg]);
     setInput("");
 
-    // Simulate bot response
+    // High-end bot response simulation
     setTimeout(() => {
       setMessages(prev => [...prev, { 
         role: "bot", 
-        text: "I've noted your interest. Our solutions architecture team specializes in exactly that. Would you like to see a relevant case study?" 
+        text: "Understood. Our Intelligence Mesh is currently processing high-priority requests. For specialized architectural consultations, I recommend initiating the enterprise inquiry protocol." 
       }]);
-    }, 1000);
+    }, 1200);
   };
 
   return (
-    <div className="fixed bottom-6 right-6 z-[100]">
+    <div className="fixed bottom-8 right-8 z-[100]">
       <AnimatePresence>
         {isOpen && (
           <motion.div
             initial={{ opacity: 0, scale: 0.9, y: 20 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.9, y: 20 }}
-            className="mb-4 w-[350px] md:w-[400px] h-[500px] glass-card shadow-neon-sm overflow-hidden flex flex-col"
+            className="mb-6 w-[360px] md:w-[420px] h-[550px] bg-black border border-white/10 rounded-[32px] shadow-[0_20px_60px_rgba(0,0,0,0.8)] overflow-hidden flex flex-col"
           >
             {/* Header */}
-            <div className="p-4 bg-primary flex items-center justify-between text-white">
+            <div className="p-6 bg-white flex items-center justify-between text-black">
               <div className="flex items-center gap-3">
-                <div className="w-8 h-8 rounded-lg bg-white/20 flex items-center justify-center">
-                  <Bot size={18} />
+                <div className="w-10 h-10 rounded-xl bg-black flex items-center justify-center text-white">
+                  <Bot size={20} />
                 </div>
                 <div>
-                  <div className="text-sm font-bold">Zonex AI</div>
-                  <div className="text-[10px] opacity-80 flex items-center gap-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse" /> Online
+                  <div className="text-sm font-black tracking-tight">SAFENETICS AI</div>
+                  <div className="text-[10px] uppercase tracking-widest font-bold opacity-60 flex items-center gap-1.5 mt-0.5">
+                    <span className="w-1.5 h-1.5 rounded-full bg-blue-500 animate-pulse" /> Active Node
                   </div>
                 </div>
               </div>
-              <button onClick={() => setIsOpen(false)} className="hover:bg-white/10 p-1 rounded-md transition-colors">
+              <button 
+                onClick={() => setIsOpen(false)} 
+                className="hover:bg-black/10 p-2 rounded-lg transition-colors"
+                aria-label="Close"
+              >
                 <X size={20} />
               </button>
             </div>
 
             {/* Messages */}
-            <div className="flex-grow overflow-y-auto p-4 flex flex-col gap-4 scrollbar-hide">
+            <div className="flex-grow overflow-y-auto p-6 flex flex-col gap-6 scrollbar-hide">
               {messages.map((m, i) => (
                 <motion.div
                   key={i}
-                  initial={{ opacity: 0, x: m.role === 'user' ? 10 : -10 }}
-                  animate={{ opacity: 1, x: 0 }}
-                  className={`max-w-[80%] p-3 rounded-2xl text-xs leading-relaxed ${
+                  initial={{ opacity: 0, y: 10 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  className={`max-w-[85%] p-4 rounded-2xl text-[13px] leading-relaxed font-medium ${
                     m.role === 'user' 
-                    ? 'bg-primary text-white ml-auto rounded-tr-none' 
-                    : 'bg-surface border border-border mr-auto rounded-tl-none'
+                    ? 'bg-white text-black ml-auto rounded-tr-none shadow-lg' 
+                    : 'bg-white/[0.03] border border-white/5 text-white/80 mr-auto rounded-tl-none'
                   }`}
                 >
                   {m.text}
@@ -75,33 +79,36 @@ export default function FloatingChatbot() {
             </div>
 
             {/* Footer */}
-            <form onSubmit={handleSend} className="p-4 border-t border-border bg-surface/50">
+            <form onSubmit={handleSend} className="p-6 border-t border-white/5 bg-black">
                <div className="relative">
                   <input 
                     type="text" 
                     value={input}
                     onChange={(e) => setInput(e.target.value)}
-                    placeholder="Ask about AI, Cloud, Security..." 
-                    className="w-full bg-surface border border-border rounded-xl pl-4 pr-12 py-3 text-xs focus:outline-none focus:ring-2 focus:ring-primary/20 transition-all"
+                    placeholder="Inquire about Neural, Quantum, Intelligence..." 
+                    className="w-full bg-white/[0.04] border border-white/10 rounded-2xl pl-5 pr-14 py-4 text-xs font-medium text-white focus:outline-none focus:border-white/30 transition-all placeholder:text-white/20" 
                   />
-                  <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 p-2 text-primary hover:bg-primary/5 rounded-lg transition-colors">
+                  <button type="submit" className="absolute right-2 top-1/2 -translate-y-1/2 p-2.5 bg-white text-black rounded-xl hover:scale-105 active:scale-95 transition-all shadow-lg">
                     <Send size={16} />
                   </button>
                </div>
-               <div className="mt-2 text-[10px] text-text-muted text-center flex items-center justify-center gap-1">
-                 <Sparkles size={10} /> Powered by Zonex-Pro LLM
+               <div className="mt-4 text-[9px] text-white/20 text-center flex items-center justify-center gap-1.5 uppercase font-bold tracking-[0.2em]">
+                 <Sparkles size={10} /> Powered by Safenetics Neural-Core
                </div>
             </form>
           </motion.div>
         )}
       </AnimatePresence>
 
-      <button
+      <motion.button
         onClick={() => setIsOpen(!isOpen)}
-        className="w-14 h-14 rounded-full bg-primary text-white shadow-neon flex items-center justify-center hover:scale-110 active:scale-95 transition-all group"
+        whileHover={{ scale: 1.1 }}
+        whileTap={{ scale: 0.9 }}
+        className="w-16 h-16 rounded-2xl bg-white text-black shadow-[0_10px_40px_rgba(255,255,255,0.2)] flex items-center justify-center transition-all group"
+        aria-label="Toggle AI assistant"
       >
-        {isOpen ? <X size={24} /> : <MessageSquare size={24} />}
-      </button>
+        {isOpen ? <X size={28} /> : <MessageSquare size={28} />}
+      </motion.button>
     </div>
   );
 }

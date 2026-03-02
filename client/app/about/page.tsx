@@ -2,205 +2,157 @@
 
 import React from "react";
 import Link from "next/link";
-import { Target, Heart, Users, TrendingUp, ArrowRight, Globe } from "lucide-react";
-import AnimatedSection from "@/components/AnimatedSection";
-import SectionHeading from "@/components/SectionHeading";
-import FeatureCard from "@/components/FeatureCard";
-import Button from "@/components/Button";
+import { Shield, Target, Cpu, Globe, ArrowRight, Zap } from "lucide-react";
 import { motion } from "framer-motion";
 
 const values = [
   {
+    icon: Shield,
+    title: "Uncompromising Security",
+    description: "Absolute protection is not a feature, it's our foundational requirement for every architecture.",
+  },
+  {
     icon: Target,
-    title: "Innovation",
-    description: "Pushing boundaries with cutting-edge technology and creative problem solving.",
+    title: "Mathematical Precision",
+    description: "Every line of code and every infrastructure node is engineered for deterministic reliability.",
   },
   {
-    icon: Heart,
-    title: "Integrity",
-    description: "Transparent processes, honest communication, and ethical delivery at every step.",
-  },
-  {
-    icon: Users,
-    title: "Expertise",
-    description: "A team of world-class engineers, designers, and strategists dedicated to your success.",
-  },
-  {
-    icon: TrendingUp,
-    title: "Growth",
-    description: "Our metrics are tied to your growth — when you succeed, we succeed.",
+    icon: Cpu,
+    title: "Neural Integration",
+    description: "Bridging the gap between legacy systems and the future of intelligent automation.",
   },
 ];
 
 const milestones = [
-  { year: "2019", title: "Founded", description: "ZONEX-PRO was born with a mission to bridge technology and business." },
-  { year: "2020", title: "First Enterprise Client", description: "Signed our first Fortune 500 partner for a full digital transformation." },
-  { year: "2022", title: "Global Expansion", description: "Expanded operations to 12 countries with distributed engineering teams." },
-  { year: "2024", title: "AI Division Launch", description: "Launched our dedicated AI & Machine Learning practice." },
+  { year: "2021", title: "Foundation", description: "Safenetics was established to redefine enterprise security standards." },
+  { year: "2022", title: "Quantum Core Alpha", description: "Launched our first proprietary neural-encryption protocol for financial institutions." },
+  { year: "2023", title: "Global Intelligence Mesh", description: "Deployed 200+ edge nodes across 4 continents for real-time threat detection." },
+  { year: "2025", title: "Neural-Ready Expansion", description: "Scaling infrastructure to support the next generation of industrial AI." },
 ];
 
 export default function AboutPage() {
   return (
-    <div className="flex flex-col">
-      {/* Hero */}
-      <section className="section-padding relative overflow-hidden">
-        <div className="hero-mesh" />
-        <div className="container-custom relative z-10">
-          <AnimatedSection className="max-w-4xl mx-auto text-center">
-            <span className="badge mb-6">About ZONEX-PRO</span>
-            <h1 className="heading-hero mb-6">
-              Driven by <span className="text-gradient">Precision</span>,
-              <br />
-              Defined by Excellence.
-            </h1>
-            <p className="body-lg max-w-2xl mx-auto">
-              ZONEX-PRO was founded with a single mission: to provide uncompromising
-              technological depth to businesses of all scales. We don&apos;t just build
-              software — we build foundations for the future.
+    <div className="flex flex-col bg-black text-white px-6">
+      
+      {/* Hero Section - 100vh */}
+      <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-b from-white/[0.02] to-transparent" />
+        <div className="relative z-10 text-center max-w-4xl">
+          <motion.span 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            className="text-[11px] font-bold tracking-[0.4em] uppercase text-white/40 mb-8 block font-mono"
+          >
+            The Safenetics Vision
+          </motion.span>
+          <motion.h1 
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-8 leading-[0.95]"
+          >
+            Engineering <br />
+            <span className="text-white/20">Absolute Certainty.</span>
+          </motion.h1>
+          <motion.p 
+            initial={{ opacity: 0 }}
+            animate={{ opacity: 1 }}
+            transition={{ delay: 0.3 }}
+            className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed"
+          >
+            Safenetics was founded on a single principle: that security and intelligence should be indistinguishable from the infrastructure itself.
+          </motion.p>
+        </div>
+      </section>
+
+      {/* Philosophy Section */}
+      <section className="h-screen flex items-center bg-black border-t border-white/5 overflow-hidden">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6 md:px-12">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+            className="hidden lg:flex items-center justify-center aspect-square relative bg-white/[0.02] rounded-3xl border border-white/5"
+          >
+            <div className="absolute inset-0 opacity-10 bg-[radial-gradient(circle_at_50%_50%,white_1px,transparent_1px)] bg-[size:20px_20px]" />
+            <Globe size={240} strokeWidth={0.5} className="text-white/5 animate-pulse" />
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 1 }}
+            viewport={{ once: true }}
+          >
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8">Structural Integrity.</h2>
+            <p className="text-lg text-white/40 leading-relaxed mb-12">
+              We approach technology through the lens of industrial design. Everything we build is rigorously tested, mathematically verified, and designed to perform under extreme load.
             </p>
-          </AnimatedSection>
-        </div>
-      </section>
-
-      {/* Values */}
-      <section className="section-padding" style={{ background: "var(--color-surface-elevated)" }}>
-        <div className="container-custom">
-          <AnimatedSection>
-            <SectionHeading
-              badge="Our Values"
-              title="The Principles That Drive Us"
-              subtitle="Every decision we make is guided by our core values — they're the DNA of our company."
-            />
-          </AnimatedSection>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5 md:gap-6">
-            {values.map((value, i) => (
-              <FeatureCard
-                key={value.title}
-                icon={value.icon}
-                title={value.title}
-                description={value.description}
-                delay={i * 0.1}
-              />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Vision — Split Layout */}
-      <section className="section-padding">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
-            <AnimatedSection direction="left">
-              <div
-                className="aspect-square max-w-md mx-auto lg:mx-0 rounded-3xl relative overflow-hidden"
-                style={{
-                  background: "linear-gradient(135deg, rgba(79, 70, 229, 0.08) 0%, rgba(6, 182, 212, 0.08) 100%)",
-                  border: "1px solid var(--color-border)",
-                }}
-              >
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    animate={{ rotate: -360 }}
-                    transition={{ duration: 80, repeat: Infinity, ease: "linear" }}
-                    className="w-4/5 h-4/5 rounded-3xl border border-dashed opacity-15"
-                    style={{ borderColor: "var(--accent)" }}
-                  />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <motion.div
-                    animate={{ rotate: 360 }}
-                    transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-                    className="w-3/5 h-3/5 rounded-3xl border-2 border-dashed opacity-15"
-                    style={{ borderColor: "var(--primary)" }}
-                  />
-                </div>
-                <div className="absolute inset-0 flex items-center justify-center">
-                  <div className="w-2/5 h-2/5 bg-gradient-to-br from-indigo-600 to-cyan-500 rounded-2xl shadow-2xl shadow-indigo-500/20 flex items-center justify-center">
-                    <Globe className="text-white" size={40} />
-                  </div>
-                </div>
-              </div>
-            </AnimatedSection>
-
-            <AnimatedSection direction="right">
-              <span className="badge mb-4">Our Vision</span>
-              <h2 className="heading-section mb-5">
-                A Vision for <span className="text-gradient">Global</span> Scaling
-              </h2>
-              <p className="body-lg mb-6">
-                Our vision is to become the leading catalyst for digital transformation
-                worldwide. By bridging the gap between complex engineering and business
-                goals, we help our partners achieve dominance in their respective
-                markets.
-              </p>
-              <p className="body-lg mb-8">
-                With offices across 3 continents and a growing network of technology
-                partners, we&apos;re positioned to tackle the most ambitious projects on
-                the planet.
-              </p>
-              <Link href="/services">
-                <Button variant="primary">
-                  Explore Our Services
-                  <ArrowRight size={16} />
-                </Button>
-              </Link>
-            </AnimatedSection>
-          </div>
-        </div>
-      </section>
-
-      {/* Journey / Milestones */}
-      <section className="section-padding" style={{ background: "var(--color-surface-elevated)" }}>
-        <div className="container-custom">
-          <AnimatedSection>
-            <SectionHeading
-              badge="Our Journey"
-              title="Building the Future, One Milestone at a Time"
-            />
-          </AnimatedSection>
-
-          <div className="max-w-3xl mx-auto space-y-8">
-            {milestones.map((m, i) => (
-              <AnimatedSection key={m.year} delay={i * 0.1}>
-                <div className="flex gap-6 items-start">
-                  <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-indigo-600 to-indigo-500 flex items-center justify-center text-white font-bold text-sm shrink-0 shadow-md shadow-indigo-500/20">
-                    {m.year}
+            <div className="space-y-12">
+              {values.map((v, i) => (
+                <div key={v.title} className="flex gap-6 items-start">
+                  <div className="w-10 h-10 rounded-lg bg-white/5 flex items-center justify-center text-white/40 shrink-0">
+                    <v.icon size={20} />
                   </div>
                   <div>
-                    <h3 className="font-bold text-lg mb-1" style={{ fontFamily: "var(--font-outfit)" }}>{m.title}</h3>
-                    <p className="text-sm" style={{ color: "var(--color-text-secondary)" }}>{m.description}</p>
+                    <h3 className="text-lg font-bold mb-2">{v.title}</h3>
+                    <p className="text-sm text-white/30 leading-relaxed max-w-sm">{v.description}</p>
                   </div>
                 </div>
-              </AnimatedSection>
-            ))}
-          </div>
+              ))}
+            </div>
+          </motion.div>
         </div>
       </section>
 
-      {/* CTA */}
-      <section className="py-16 md:py-20">
-        <div className="container-custom">
-          <AnimatedSection>
-            <div className="bg-gradient-to-br from-indigo-600 via-indigo-700 to-purple-800 rounded-3xl p-10 sm:p-14 md:p-20 text-center text-white relative overflow-hidden">
-              <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2" />
-              <div className="absolute bottom-0 left-0 w-48 h-48 bg-white/5 rounded-full translate-y-1/2 -translate-x-1/2" />
-              <h2 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 relative z-10" style={{ fontFamily: "var(--font-outfit)" }}>
-                Want to Work With Us?
-              </h2>
-              <p className="text-indigo-200 text-base md:text-lg max-w-xl mx-auto mb-10 relative z-10">
-                We&apos;re always looking for ambitious projects and talented collaborators.
+      {/* History Section */}
+      <section className="h-screen flex flex-col justify-center bg-black border-t border-white/5 overflow-hidden">
+        <div className="container-custom mx-auto px-6 md:px-12 mb-20">
+          <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-4">Our Trajectory.</h2>
+          <p className="text-white/40 font-medium">From localized security to global intelligence architecture.</p>
+        </div>
+
+        <div className="container-custom grid grid-cols-1 md:grid-cols-4 gap-4 px-6 md:px-12">
+          {milestones.map((m, i) => (
+            <motion.div
+              key={m.year}
+              initial={{ opacity: 0, y: 20 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: i * 0.1 }}
+              viewport={{ once: true }}
+              className="p-8 bg-white/[0.03] border border-white/5 rounded-2xl group hover:bg-white/[0.05] transition-all"
+            >
+              <div className="text-3xl font-black mb-4 text-white/10 group-hover:text-white transition-colors">
+                {m.year}
+              </div>
+              <h3 className="text-lg font-bold mb-2">{m.title}</h3>
+              <p className="text-xs text-white/30 leading-relaxed font-medium">
+                {m.description}
               </p>
-              <Link href="/contact" className="relative z-10 inline-block">
-                <Button variant="secondary" size="lg">
-                  Get in Touch
-                  <ArrowRight size={18} />
-                </Button>
-              </Link>
-            </div>
-          </AnimatedSection>
+            </motion.div>
+          ))}
         </div>
       </section>
+
+      {/* Final CTA */}
+      <section className="h-[60vh] flex flex-col items-center justify-center relative bg-black border-t border-white/5 overflow-hidden">
+        <div className="relative z-10 text-center px-6">
+          <h2 className="text-4xl md:text-6xl font-bold tracking-tighter mb-10">
+            Join the <span className="text-white/20">Elite.</span>
+          </h2>
+          <Link href="/contact">
+            <motion.button
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="px-10 py-4 bg-white text-black font-black rounded-full shadow-[0_0_40px_rgba(255,255,255,0.15)] transition-all"
+            >
+              Contact Intelligence Team
+            </motion.button>
+          </Link>
+        </div>
+      </section>
+
     </div>
   );
 }
-

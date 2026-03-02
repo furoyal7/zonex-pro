@@ -26,7 +26,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
       whileHover={{ y: -4 }}
       className="glass-card p-7 md:p-8 group cursor-default"
     >
-      <div className="w-12 h-12 rounded-xl bg-indigo-50 dark:bg-indigo-500/10 flex items-center justify-center text-indigo-600 mb-5 group-hover:bg-indigo-600 group-hover:text-white transition-all duration-300">
+      <div className="w-12 h-12 rounded-xl bg-white/5 flex items-center justify-center text-primary mb-5 group-hover:bg-primary group-hover:text-white transition-all duration-300">
         <Icon size={22} strokeWidth={2} />
       </div>
       <h3 className="text-lg font-bold mb-2 tracking-tight" style={{ fontFamily: "var(--font-outfit), 'Outfit', sans-serif" }}>

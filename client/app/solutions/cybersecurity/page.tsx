@@ -5,100 +5,117 @@ import Link from "next/link";
 import { motion } from "framer-motion";
 import { 
   Shield, 
+  ArrowLeft, 
   Lock, 
   Key, 
   Eye, 
-  ArrowLeft, 
-  ShieldCheck, 
   Search, 
-  FileCheck
+  Activity,
+  ArrowRight,
+  ShieldAlert
 } from "lucide-react";
-import Button from "@/components/Button";
 
 const fadeUp = (delay: number = 0) => ({
   initial: { opacity: 0, y: 20 },
-  animate: { opacity: 1, y: 0 },
-  transition: { duration: 0.5, delay, ease: "easeOut" as any },
+  whileInView: { opacity: 1, y: 0 },
+  viewport: { once: true },
+  transition: { duration: 0.8, delay, ease: [0.16, 1, 0.3, 1] as any },
 });
 
 export default function SecuritySolutionPage() {
   return (
-    <div className="flex flex-col">
-      <nav className="pt-24 pb-6 bg-background/50 backdrop-blur-md sticky top-0 z-20">
-        <div className="container-custom flex items-center justify-between">
-          <Link href="/solutions" className="flex items-center gap-2 text-sm font-medium text-text-secondary hover:text-primary transition-colors">
-            <ArrowLeft size={16} />
-            Back to Solutions
-          </Link>
-          <div className="hidden md:flex items-center gap-6">
-            <Link href="#framework" className="text-sm font-medium hover:text-primary">Framework</Link>
-            <Link href="#compliance" className="text-sm font-medium hover:text-primary">Compliance</Link>
-            <Link href="#get-started" className="text-sm font-medium hover:text-primary">Contact</Link>
-          </div>
-        </div>
+    <div className="flex flex-col bg-black text-white px-6">
+      
+      {/* Minimal Nav */}
+      <nav className="fixed top-24 left-1/2 -translate-x-1/2 z-40">
+        <Link href="/solutions" className="flex items-center gap-3 px-6 py-2 bg-white/[0.05] border border-white/10 rounded-full text-[10px] font-black uppercase tracking-[0.2em] text-white/60 hover:text-white hover:bg-white/10 transition-all backdrop-blur-md">
+          <ArrowLeft size={14} /> Back to Solutions
+        </Link>
       </nav>
 
-      <section className="py-20 md:py-28 overflow-hidden">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-            <motion.div {...fadeUp(0)}>
-              <div className="w-16 h-16 rounded-2xl bg-emerald-500/10 text-emerald-500 flex items-center justify-center mb-8">
-                <Shield size={32} />
-              </div>
-              <h1 className="heading-hero mb-6 text-text-primary">
-                Zero-Trust <br />
-                <span className="text-emerald-500">Cybersecurity</span>
-              </h1>
-              <p className="body-lg mb-10 max-w-xl">
-                In a world of perimeter-less networks, trust is a vulnerability. We build immutable 
-                security architectures that verify every request and monitor every packet in real-time.
-              </p>
-              <div className="flex flex-wrap gap-4">
-                <Link href="/contact">
-                  <Button variant="primary" size="lg">Get a Security Audit</Button>
-                </Link>
-              </div>
-            </motion.div>
-
-            <motion.div 
-              {...fadeUp(0.2)}
-              className="relative aspect-square lg:aspect-video rounded-3xl overflow-hidden border border-border bg-surface-elevated flex items-center justify-center"
-            >
-               <div className="relative w-48 h-48 border-4 border-emerald-500/20 rounded-full flex items-center justify-center animate-[pulse_4s_infinite]">
-                  <Lock className="text-emerald-500" size={64} />
-                  <div className="absolute inset-0 border-t-4 border-emerald-500 rounded-full animate-spin" />
-               </div>
-               <div className="absolute bottom-8 left-8 right-8 grid grid-cols-2 gap-4">
-                  <div className="h-2 bg-emerald-500/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-emerald-500 w-3/4 animate-[shimmer_2s_infinite]" />
-                  </div>
-                  <div className="h-2 bg-emerald-500/20 rounded-full overflow-hidden">
-                    <div className="h-full bg-emerald-500 w-1/2 animate-[shimmer_3s_infinite]" />
-                  </div>
-               </div>
-            </motion.div>
-          </div>
+      {/* Hero Section - 100vh */}
+      <section className="h-screen flex flex-col items-center justify-center relative overflow-hidden">
+        <div className="absolute inset-0 bg-gradient-to-tr from-white/[0.02] to-transparent pointer-events-none" />
+        <div className="relative z-10 text-center max-w-5xl">
+          <motion.div {...fadeUp(0)}>
+            <div className="w-20 h-20 rounded-[24px] bg-white/5 flex items-center justify-center mb-10 mx-auto text-white/30">
+              <Shield size={40} strokeWidth={1} />
+            </div>
+            <h1 className="text-5xl md:text-7xl lg:text-8xl font-black tracking-tighter mb-10 leading-[0.95]">
+              Zero-Trust <br />
+              <span className="text-white/20">Security Protocol.</span>
+            </h1>
+            <p className="text-lg md:text-xl text-white/50 max-w-2xl mx-auto font-medium leading-relaxed mb-12">
+              Immutable security frameworks engineered into the DNA of every infrastructure layer. Beyond trust.
+            </p>
+            <Link href="/contact">
+              <button className="px-10 py-5 bg-white text-black font-black rounded-full text-sm uppercase tracking-tighter shadow-xl">Initiate Security Audit</button>
+            </Link>
+          </motion.div>
         </div>
       </section>
 
-      <section id="framework" className="py-20 md:py-32 bg-surface-elevated">
-        <div className="container-custom">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {[
-              { title: "Immutable Identity", icon: Key, desc: "Cryptographically verified identity for all users and machines." },
-              { title: "Continuous Monitoring", icon: Eye, desc: "Real-time visibility into all network traffic and system changes." },
-              { title: "Threat Hunting", icon: Search, desc: "Proactive AI agents that identify vulnerabilities before they are exploited." },
-              { title: "Compliance Ready", icon: FileCheck, desc: "Automated logging and auditing for SOC2, HIPAA, and GDPR." },
-            ].map((item, i) => (
-              <motion.div key={item.title} {...fadeUp(i * 0.1)} className="bg-surface p-8 rounded-2xl border border-border">
-                <item.icon className="text-emerald-500 mb-5" size={28} />
-                <h3 className="text-lg font-bold mb-3">{item.title}</h3>
-                <p className="text-sm text-text-secondary">{item.desc}</p>
-              </motion.div>
-            ))}
-          </div>
+      {/* Core Defense - 100vh */}
+      <section className="h-screen flex items-center bg-black border-y border-white/5 relative overflow-hidden">
+        <div className="container-custom grid grid-cols-1 lg:grid-cols-2 gap-20 items-center px-6 md:px-12 mx-auto">
+          <motion.div {...fadeUp(0)}>
+            <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-8 leading-tight">Invisibility by <br /> <span className="text-white/20">Design.</span></h2>
+            <p className="text-lg text-white/40 leading-relaxed mb-12 max-w-md font-medium">
+              We treat every request as a potential threat. Our Zero-Trust Mesh implements dynamic identity verification and planetary-scale monitoring to ensure total isolation.
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
+              {[
+                { title: "Immutable Identity", icon: Key, desc: "Geometric verification for all entities." },
+                { title: "Continuous Monitoring", icon: Eye, desc: "Planetary-scale visibility." },
+                { title: "Threat Mitigation", icon: ShieldAlert, desc: "Autonomous active defense agents." },
+                { title: "Compliance Ready", icon: Search, desc: "Automated real-time auditing." },
+              ].map((item, i) => (
+                <div key={item.title} className="p-8 bg-white/[0.02] border border-white/5 rounded-3xl hover:bg-white/[0.04] transition-all">
+                   <div className="w-10 h-10 bg-white/5 rounded-xl flex items-center justify-center text-white/20 mb-6 uppercase tracking-widest text-[9px] font-bold">
+                     <item.icon size={18} />
+                   </div>
+                   <h3 className="text-sm font-bold mb-2 tracking-tight">{item.title}</h3>
+                   <p className="text-[10px] text-white/30 font-medium leading-relaxed">{item.desc}</p>
+                </div>
+              ))}
+            </div>
+          </motion.div>
+
+          <motion.div 
+            initial={{ opacity: 0, scale: 0.9 }}
+            whileInView={{ opacity: 1, scale: 1 }}
+            transition={{ duration: 1.2 }}
+            className="hidden lg:flex items-center justify-center"
+          >
+             <div className="relative w-80 h-80 flex items-center justify-center">
+                <div className="absolute inset-0 border border-white/5 rounded-full animate-pulse" />
+                <div className="absolute inset-4 border border-white/5 rounded-full animate-pulse delay-75" />
+                <div className="absolute inset-8 border border-white/5 rounded-full animate-pulse delay-150" />
+                <Lock className="text-white/10" size={120} strokeWidth={0.5} />
+             </div>
+          </motion.div>
         </div>
       </section>
+
+      {/* Trust Section */}
+      <section className="h-[60vh] flex flex-col items-center justify-center bg-black">
+        <div className="text-center">
+           <h2 className="text-4xl md:text-6xl font-black tracking-tighter mb-10">Absolute <br /> <span className="text-white/20">Compliance.</span></h2>
+           <div className="flex gap-12 opacity-20 mb-16">
+              <span className="text-[10px] font-black uppercase tracking-[0.4em]">SOC2 II</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em]">ISO-27001</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em]">HIPAA</span>
+              <span className="text-[10px] font-black uppercase tracking-[0.4em]">GDPR</span>
+           </div>
+           
+           <Link href="/contact">
+             <button className="flex items-center gap-3 bg-white text-black px-12 py-5 rounded-full font-black text-sm uppercase tracking-tighter mx-auto shadow-2xl">
+               Consult Security Architect <ArrowRight size={20} />
+             </button>
+           </Link>
+        </div>
+      </section>
+
     </div>
   );
 }
